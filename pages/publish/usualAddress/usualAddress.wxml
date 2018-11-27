@@ -1,0 +1,44 @@
+<!-- <text>常用地址</text> -->
+<view>
+  <view class='addtop'>
+    <view class='add_left'>
+      <view class='middleitem'>张三</view>
+      <view class='middleitem'>15715762088</view>
+      <view class='add_detail'>
+        <text class='moren'>默认</text>浙江省 杭州市 拱墅区 莫干山路86号 3楼409室
+      </view>
+    </view>
+    <view class='add_right' bindtap='Editor'>编辑</view>
+    <view class='line'></view>
+  </view>
+  <view class='middle'>
+    <view class='mid_item'>
+      <view class='middleitem'>收件人</view>
+      <input class='mid_inp' bindinput='recipiName'></input>
+    </view>
+    <view class='mid_item'>
+      <view class='middleitem'>联系电话</view>
+      <input class='mid_inp' bindinput='relatPhone' type= "number" maxlength="11"></input>
+    </view>
+    <view class='mid_item'>
+      <view class='middleitem'>所在位置</view>
+      <view class='youarrow' bindtap='toQQMap'>
+        <image src='/image/shangpu/jiantou@2x.png' wx:if="{{!plateQQName}}"></image>
+        <view  wx:if="{{plateQQName}}">
+            {{plateQQName}}
+        </view>     
+      </view>
+    </view>
+    <view class='mid_item'>
+      <view class='middleitem'>具体门牌号</view>
+      <input class='mid_inp' bindinput='specHouse' bindblur="atuoGetLocation" ></input>
+    </view>
+    <view class='mid_item'>
+      <view class='middleitem'>设为默认地址</view>
+      <switch class="choose" checked="{{isChecked}}" bindchange="changeSwitch"/>
+    </view>
+  </view>
+  <view class='address' bindtap='newAddress' wx:if="{{!editor}}">新增地址</view>
+  <view class='address' wx:if="{{editor}}" bindtap='DeleteAdd'>删除地址</view>
+  <view class='address' wx:if="{{editor}}" bindtap='SaveAdd'>保存设置</view>
+</view>

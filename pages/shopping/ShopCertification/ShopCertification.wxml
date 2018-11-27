@@ -1,0 +1,87 @@
+<!-- <text>商铺认证页</text> -->
+<view class='bord'>
+  <view class='img_logo'>
+      <image src='/image/shangpu/tuxiang@2x.png' wx:if="{{!logourl}}" bindtap='addlogo'></image>
+      <image src='{{logourl}}' wx:if="{{logourl}}" bindtap='addlogo'></image>
+      <view class='shopname'>商铺名称</view>
+      <input placeholder='建议按照营业执照名称填写' class='shop_name' placeholder-style='font-size:24rpx' bindinput='onshopName'></input>
+  </view>
+  <view class='middle'>
+    <!-- 位置搜索 -->
+    <view class='search'>
+      <image class='searchplate' src='/image/sousuo@2x.png'></image>
+      <input class='search_input' placeholder='请选择商铺所在的社区' placeholder-style='font-size:24rpx;color:#939393;' value='{{platevalue}}' bindconfirm="confirm1" bindinput='input1' bindtap='searchplate'></input>
+      <view class='hasfocus'>
+        <view class='red'>已关注社区|</view>{{city}}
+      </view>
+    </view>
+    <!-- 商铺门牌号 -->
+    <view>
+      <view class='title'>商铺门牌号</view>
+      <input placeholder='请填写具体地址门牌号' class='inp_txt' placeholder-style='font-size:28rpx' bindinput='onSite'></input>
+    </view>
+    <!-- 商铺联系人 -->
+    <view>
+      <view class='title'>商铺联系人</view>
+      <input placeholder='请填写店铺联系人真实姓名' class='inp_txt' placeholder-style='font-size:28rpx' bindinput='onName'></input>
+    </view>
+    <!-- 商铺微信号 -->
+    <view>
+      <view class='title'>商铺微信昵称</view>
+      <view class='inp_txt' style='font-size:30rpx;'>{{nickName}}</view>
+    </view>
+    <!-- 商铺手机号 -->
+    <view>
+      <view class='title'>绑定手机号</view>
+      <view class="nonePhone inp_txt" wx:if="{{bindPhone}}" bindtap='BindPhone'>请绑定手机号</view>
+      <view class='inp_txt' wx:if="{{bindhasPhone}}" style='font-size:30rpx;'>{{myPhone}}</view>
+    </view>
+    <!-- 商铺执照 -->
+    <view>
+     <view class='uploading' bindtap='uploading'>
+        <view class='tianjia' wx:if="{{!imgurl}}">
+            <image src='/image/add.png'></image>
+        </view>
+        <image src='{{imgurl}}' data-src='{{imgurl}}' wx:if="{{imgurl}}" class='imgurl'></image>
+      </view>
+      <view class='addlicense'>商铺营业执照</view>
+    </view>
+    <!-- 同意协议 -->
+    <view class='certif'>
+      <view class='quan' bindtap='agreeProto' wx:if="{{noAgree}}"></view>
+      <view class='agree' wx:if="{{!noAgree}}">
+          <image src='/image/shangpu/agree@2x.png'></image>
+      </view>
+      我同意<text class='red'>淘比邻入驻协议</text>
+    </view>
+  </view>
+<view class='focusplate' wx:if="{{showsearch}}">
+    <view class='plateCell' wx:for="nearPlate" wx:for-index="idx" wx:key="key" id="{{idx}}">
+      <view class='iconplate' wx:if="{{nearPlate[idx]}}">
+        <image src='/image/plateIcon@2x.png'></image>
+      </view>
+      <text bindtap='choosePlate' id="{{idx}}">{{nearPlate[idx].plate.title}}            </text>
+    </view>
+</view>
+</view>
+<view bindtap='submit' class='submit'>
+  <image src='/image/shangpu/submit@2x.png'></image>
+  <view class='sub_txt'>提交</view>
+</view>
+<!-- 绑定手机号弹框 -->
+<view class='shade' wx:if="{{hideName}}"></view>
+<view class='pop' wx:if="{{hideName}}">
+      <text class='pop_txt'>请绑定手机号</text>
+      <image src='/image/cuowuTwo@2x.png' class='cuowu' bindtap='hide'></image>
+      <view class='phone'>
+        <image src='/image/zh_icon_phone@2x.png'></image>
+        <input placeholder='请输入您的手机号' class='phe_inp' type= "number" bindinput='inputPhoneNum' maxlength="11" />
+      </view>
+      <view class='valid'>
+          <image class="val_phe" src='/image/sr_icon_phone@2x.png'></image>
+          <input placeholder='请输入您的手机号验证码' type='number'  bindinput='onverify' class='phe_inp2'></input>
+          <image class='val_val' src='/image/sr_btn_hqyz@2x.png' bindtap='getVerificationCode' wx:if="{{verification}}"></image>
+          <button class='count' wx:if="{{ontime}}">{{time}}s</button>
+      </view>
+      <text class='pop_queren' bindtap='onconfirm'>确认</text>
+</view>

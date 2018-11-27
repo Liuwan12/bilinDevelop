@@ -1,0 +1,549 @@
+page{
+  font-size: 30rpx;
+}
+.home_page{
+  margin-bottom: 100rpx;
+  height: 100%;
+}
+.line1{
+  position:absolute;
+  background:red;
+  height:1rpx;
+  top:707rpx;
+  z-index:10;
+  width:100%;
+}
+.todetail{
+  width:40rpx;
+  height:40rpx;
+  position:relative;
+  top:-20rpx;
+}
+.getUserInfo{
+  width:100%;
+  height:1300rpx;
+  opacity:0;
+  z-index:101;
+  position:fixed;
+}
+/* 蒙层 */
+.shade{
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  left: 0;
+  top: 0;
+}
+/*  头部CSS  */
+.headerBar{
+  /* height: 60rpx; */
+  border-top: solid 1px #e9e9e9;
+  border-bottom: solid 1px #e9e9e9;
+}
+.renxiang{
+  width: 30rpx;
+  height: 30rpx;
+  position:relative;
+  top:5rpx;
+}
+.plate_tuxiang{
+  width: 30rpx;
+  height: 30rpx;
+  display: inline-block;
+}
+/* 位置数量 */
+.rednum{
+  display:inline-block;
+  color: #FF4400;
+  font-size: 26rpx;
+  position: relative;
+  top: -2px;
+}
+.rednum1{
+  display:inline-block;
+  color: #ff4400;
+  font-size: 26rpx;
+  position: relative;
+  top: -8rpx;
+}
+.place{
+  font-size:26rpx;
+  float:right;
+  margin-right:10rpx;
+  line-height: 57rpx;
+  overflow:hidden;
+  width:100rpx;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.place text{
+  width: 90rpx;
+  height: 30rpx;
+  position: absolute;
+  font-size: 30rpx;
+  color: #737373;
+  top: 24rpx;
+  left:26rpx;
+}
+.shuImg2{
+  width: 33rpx;
+  height: 33rpx;
+  float: left;
+  margin-top: 10rpx;
+}
+.weizhi_toal{
+  width: 440rpx;
+}
+.weizhi{
+  font-size: 28rpx;
+  color: #353535;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-left: 20rpx;
+  max-width: 400rpx;
+  float: left;
+}
+.localCity{
+  /* float: left; */
+  font-size: 30rpx;
+  color: #333333;
+  padding-left:15rpx;
+  display:inline-block;
+  position:relative;
+  top:-30rpx;
+}
+.searchplate{
+  width: 33rpx;
+  height: 33rpx;
+  float: left;
+  margin-left:20rpx;
+  margin-top: 3rpx;
+}
+.search_plate{
+  display: inline-block;
+  line-height: 60rpx;
+  height: 60rpx;
+  background:#ffffff;
+  position:relative;
+  top:-10rpx;
+  left:100rpx;
+  width: 540rpx;
+  border-radius: 20rpx;
+}
+.search_plate::before{
+  position: absolute;
+  left: 10px;
+  top: -22rpx;
+  /* top: 8px; */
+  content: '';
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid #ffffff;
+  border-left: 8px solid transparent;
+  border-right:8px solid transparent;
+}
+.searchplate image{
+  width: 100%;
+  height: 100%;
+}
+.iconplate{
+  width:18rpx;
+  height:22rpx;
+  margin-left:40rpx;
+  margin-top:35rpx;
+  display:inline-block;
+  margin-right:20rpx;
+}
+.myfollowplate{
+  float:right;
+  margin-right:17rpx;
+  line-height: 45rpx;
+}
+.follow_txt{
+  font-size: 20rpx;
+  color: #FF4400;
+  display: block;
+  margin-top: 9rpx;
+}
+.search{
+  margin-top: 5rpx;
+  /* width: 600rpx; */
+  /* float: left; */
+  /* background: #efeeee; */
+  /* border-radius: 22rpx; */
+  margin-left: 5rpx;
+  padding-left: 20rpx;
+}
+.sea_inp{
+  /* width: 450rpx; */
+  /* float: left; */
+  margin-left: 14rpx;
+  display: inline-block;
+  width: 380rpx;
+}
+.cancel{
+  font-size: 28rpx;
+  color: #999999;
+  float:right;
+  margin-right:30rpx;
+  line-height:50rpx;
+  /* margin-top: 10rpx; */
+}
+
+/* 关注选项 */
+
+
+
+.menu1{
+  padding-bottom: 8rpx;
+}
+
+.con_btn{
+  width:300px;
+  height:90px;
+  text-align:left;
+  background:#ffffff;
+  line-height:48rpx;
+  padding: 0;
+}
+.con_btn::after{
+  border: none;
+}
+
+.bodytopline {
+  position: absolute;
+  width: 696rpx;
+  height: 2rpx;
+  background-color: #e9e9e9;
+  left: 27rpx; 
+}
+
+.shopName{
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  color: #333333;
+  position: relative;
+  left: 20rpx;
+  margin-bottom: 15rpx;
+}
+
+
+
+
+
+
+
+
+
+
+.plate_pop_list{
+  position: relative;
+  background:#ffffff;
+  z-index:10;
+}
+/*  位置页面  */
+.plate_pop{
+  position: absolute;
+  top: 150rpx;
+  left: 20rpx;
+  width: 710rpx;
+  box-shadow: 4rpx 0rpx 13rpx rgba(7, 1, 2, 0.15);
+  background:#ffffff;
+  z-index:10;
+}
+/* 关注位置页 */
+.iconplate image{
+  width: 100%;
+  height: 100%;
+  margin-bottom: 10rpx;
+}
+.plate_tuxiang image{
+  width: 100%;
+  height: 100%;
+}
+.plateCell text{
+  font-size: 30rpx;
+  color: #353535;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  max-width: 350rpx;
+  display: inline-block;
+}
+.plate_num{
+  color:#ff4400;
+  display: inline-block;
+  font-size:30rpx;
+  position: relative;
+  top: -10rpx;
+}
+.placeCell_FocusView{
+  width:89rpx;
+  height:37rpx;
+  border-radius:6rpx;
+  background-color:#FF4400;
+  font-size:26rpx;
+  color:white;
+  text-align:center;
+  float:right;
+  margin-right: 30rpx;
+  margin-top: 20rpx;
+  z-index: 1;
+}
+.placeCell_hasFocus{
+  width:89rpx;
+  height:37rpx;
+  border-radius:6rpx;
+  font-size:26rpx;
+  color:#ff4400;
+  text-align:center;
+  float:right;
+  margin-right: 30rpx;
+  border: 1px solid #ff4400;
+  margin-top:20rpx;
+  z-index: 1
+}
+/* 申请位置审核 */
+.Application{
+  background: #ffffff;
+  height: 958rpx;
+  position:absolute;
+  width:710rpx;
+  z-index: 777
+}
+.sx_touxiang{
+  width: 82rpx;
+  height: 82rpx;
+  margin-left: 16rpx;
+}
+.distance{
+  display:inline-block;
+  font-size:30rpx;
+  margin-left:20rpx;
+  overflow:hidden;
+}
+.noplate{
+   color: #353535;
+   font-size: 48rpx;
+   padding-top: 246rpx;
+   margin: 0 auto;
+   width: 106rpx;
+   height: 106rpx;
+}
+.noplate image{
+  width: 100%;
+  height: 100%;
+}
+.click{
+  text-align: center;
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  color: #7d7d7d;
+  display: block;
+}
+.appli{
+  width: 182rpx;
+  height: 63rpx;
+  background: #ffffff;
+  color: #b9b9b9;
+  font-size: 30rpx;
+  margin-top: 60rpx;
+  line-height: 63rpx;
+}
+
+
+
+.nonfocus_plate{
+  width: 89rpx;
+  height:37rpx;
+  border-radius:6rpx;
+  font-size:26rpx;
+  color:#ff4400;
+  text-align:center;
+  float:right;
+  border:1px solid #ff4400;
+  margin-right: 30rpx;
+  margin-top: 20rpx;
+}
+
+.myfocus{
+  margin: 15rpx 0rpx 30rpx 32rpx;
+}
+.cancelplate{
+  width:30rpx;
+  height:30rpx;
+  float:right;
+  padding-right:35rpx;
+}
+.cancelplate image{
+  width: 100%;
+  height: 100%;
+}
+/* 首次打开遮照 */
+.mask{
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  left: 0;
+  top: 0;
+}
+.mask_arrow{
+  width: 104rpx;
+  height: 203rpx;
+  float: right;
+  margin-top: 26rpx;
+  margin-right: 160rpx;
+}
+.mask_text{
+  color: #ffffff;
+  font-size: 32rpx;
+  margin-top: 250rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+.mask_btn{
+  color:#ffffff;
+  border:1rpx solid #ffffff;
+  display:inline-block;
+  margin-left:240rpx;
+  margin-top:100rpx;
+  padding:30rpx 80rpx 25rpx 80rpx;
+}
+/* 暂无发布样式 */
+.nopublish{
+  font-size: 30rpx;
+  padding-left:30px;
+  padding-right:30px;
+}
+.no_release{
+  padding-bottom: 30rpx;
+}
+.rel_red{
+  color: #ff4400;
+}
+
+
+/* 返回顶部样式 */
+.toTop{
+  position: fixed;
+  background: #ffffff;
+  height:86rpx;
+  width:86rpx;
+  bottom:250rpx;
+  right:7rpx;
+  border-radius:50%;
+  line-height: 20rpx;
+  z-index: 1;
+}
+.topimage{
+  width: 50rpx;
+  height: 50rpx;
+  margin-left:18rpx;
+  display: inline-block;
+  transform:rotate(180deg);
+}
+.top2{
+  font-size:26rpx;
+  text-align:center;
+}
+
+/* 选项卡 start */
+.tabBtn{
+    display:  inline-block;
+    height:  90rpx;
+    line-height:  90rpx;
+    font-size:32rpx;
+    transition:all  0.3s;
+    width:20%;
+    text-align:center;
+    }
+    .tabButtonAll{
+  display:  flex;
+  height:  100rpx;
+  border-bottom:  solid  1rpx  #e9e9e9;
+  font-size:28rpx;
+  line-height:  100rpx;
+}
+.line{
+  width: 650rpx;
+  height: 2rpx;
+  margin: 0 auto;
+  background: #e9e9e9;
+}
+.active{
+  color: #ff4400;
+  position: relative;
+  font-size: 32rpx;
+}
+.active::before{
+    position: absolute;
+    left: 29px;
+    top: 33px;
+    content: '';
+    border-top: 1px solid #ff4400;
+    border-bottom: 2px solid #ff4400;
+    border-left: 16px solid #ff4400;
+    /* border-right:4px solid #ff4400; */
+}
+/* 选项卡 end */
+
+/* lunbo(公告栏) */
+.sx_lunbo{
+  border-bottom: solid 3rpx #e9e9e9;
+}
+.sx_touxiang{
+  width: 82rpx;
+  height: 82rpx;
+  margin-left: 16rpx;
+}
+.red{
+  font-size: 28rpx;
+  color: #353535;
+  padding-left: 15rpx;
+  position:relative;
+  top:-45rpx;
+}
+.sxavater{
+  width: 28rpx;
+  height: 28rpx;
+  position:relative;
+  top:-45rpx;
+  left:10rpx;
+}
+.swiper{
+  background:#ffffff;
+  width:540rpx;
+  border-radius:20rpx;
+  height:70rpx;
+  line-height:70rpx;
+  position:relative;
+  top:-40rpx;
+  left:116rpx;
+}
+.swiper::before{
+  position: absolute;
+  left: -15px;
+  top: 10px;
+  content: '';
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 8px solid transparent;
+  border-right:8px solid #ffffff;
+}
+.sx_swiper{
+  height:34px;
+  width:540rpx;
+}
+
+.reds{
+  overflow: hidden;
+  font-size: 28rpx;
+  color: #FF4400;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  padding-left:25rpx;
+}

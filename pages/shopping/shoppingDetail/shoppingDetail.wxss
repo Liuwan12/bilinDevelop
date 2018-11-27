@@ -1,0 +1,185 @@
+.header{
+  height: 200rpx;
+  border-bottom: 20rpx solid rgb(235, 233, 233);
+}
+.title{
+  font-size: 34rpx;
+  color: rgb(53, 53, 53);
+  float: left;
+  margin-left: 30rpx;
+  margin-top: 80rpx;
+}
+.right{
+  float: right;
+  margin-top: 40rpx;
+  margin-right: 20rpx;
+}
+.tuxiang{
+  width: 120rpx;
+  height: 120rpx;
+}
+.jiantou{
+  width: 24rpx;
+  height: 42rpx;
+  margin-bottom: 35rpx;
+  margin-left: 40rpx;
+}
+.jiantou2{
+  width: 24rpx;
+  height: 42rpx;
+}
+.myRelease{
+  position: relative;
+  width: 100%;
+  height: 81rpx;
+  border-bottom: 1px solid #D3D3D3;
+  background: #FFFFFF;
+  margin-top: 22rpx;
+  padding-left: 30rpx;
+}
+.myRelease text{
+ font-size: 32rpx;
+}
+.text{
+  color: rgb(129, 129, 129);
+  float: right;
+  width: 500rpx;
+  margin-top: 8rpx;
+}
+.text1{
+  width:400rpx;
+  display:inline-block;
+  margin-left:90rpx;
+}
+.text2{
+  display:inline-block;
+  margin-left:60rpx;
+  font-size: 32rpx;
+}
+/* 绑定手机号样式 */
+.pop{
+  top: 0;
+  left: 20rpx;
+  height: 514rpx;
+  width: 710rpx;
+  position: fixed;
+  margin-top: 290rpx;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20rpx;
+  z-index: 999;
+  border:1rpx solid #ff5555;
+}
+.cuowu{
+  width: 23rpx;
+  height: 23rpx;
+  float: right;
+  margin-right: 22rpx;
+  margin-top: 22rpx;
+}
+input{
+  display: inline-block;
+  font-size: 34rpx;
+  padding-left: 22rpx;
+  width: 370rpx;
+}
+.phe_inp{
+  vertical-align: middle;
+}
+.pop_txt{
+  padding-left: 32rpx;
+  margin-top: 27rpx;
+  float: left;
+}
+.phone{
+  padding-bottom: 30rpx;
+  margin: 49rpx 0 30rpx 55rpx;
+  border-bottom: 1px solid rgb(190, 190, 190);
+  width: 610rpx;
+  display: inline-block;
+}
+.phe_inp{
+  overflow: visible;
+  width: 390rpx;
+}
+.phe_inp2{
+  overflow: auto;
+  width: 390rpx;
+}
+.phone image{
+  width: 40rpx;
+  height: 43rpx;
+}
+.valid{
+  margin-left: 55rpx;
+  margin-bottom: 80rpx;
+  border-bottom: 1px solid rgb(190, 190, 190);
+  float: left;
+  height: 90rpx;
+}
+.valid .val_phe{
+  width: 40rpx;
+  height: 43rpx;
+}
+.valid .val_val{
+  width: 160rpx;
+  height: 60rpx;
+}
+.count{
+  float: right;
+  bottom: 8rpx;
+  width: 106rpx;
+  height: 60rpx;
+  font-size: 28rpx;
+  background-color: rgb(144, 144, 144);
+  margin-left: 35rpx;
+}
+.pop_queren{
+  width: 169rpx;
+  height: 66rpx;
+  margin-left: 270rpx;
+  background-color: rgb(255, 85, 85);
+  color: #ffffff;
+  border-radius: 25rpx;
+  font-size: 30rpx;
+  text-align: center;
+  display: inline-block;
+  line-height: 66rpx;
+}
+/* 蒙层 */
+.shade{
+    position: fixed;
+    z-index: 11;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    left: 0;
+    top: 0;
+}
+/* 更改门牌号弹框 */
+.changeNum{
+  width: 600rpx;
+  height: 350rpx;
+  background: #ffffff;
+  position: fixed;
+  top: 400rpx;
+  left: 70rpx;
+  z-index: 12;
+  border-radius: 20rpx;
+}
+.houseNum{
+  border: 1rpx solid #D3D3D3;
+  width:450rpx;
+  margin-top: 10rpx;
+  margin-left:80rpx;
+  height:200rpx;
+}
+.confirmChange{
+  text-align: center;
+  display:inline-block;
+  margin-left:250rpx;
+  margin-top:20rpx;
+  border-radius:12rpx;
+  width:100rpx;
+  background:#ff5555;
+  color:#ffffff;
+}

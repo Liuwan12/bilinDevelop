@@ -1,0 +1,35 @@
+<view class='hisInfo'>
+  <view class="personal" wx:for="{{infoArr}}" wx:key="key">
+    <image src='{{item.avatar}}' class="touxiang" bindtap='skip'></image>
+    <view class='nameinfo'>
+       <text class="name" bindtap='skip'>{{item.nickname}}</text>
+       <image src='{{hisSex}}' class="img"></image>
+    </view>
+  </view>
+  <view class="interestHe" bindtap='interest' wx:if="{{!hisInfo.isFocus}}">
+    <view>+关注</view>
+  </view>
+  <view class="interestHe" bindtap='interest' wx:if="{{hisInfo.isFocus}}">
+    <view>已关注</view>
+  </view>
+</view>
+<view class='itemClasses'>
+  <view class="mypublish" bindtap='toHisFans'>
+    <image class="icon_img_gz" src='/image/myself/guanzhu.png'></image>
+    <text>TA的邻粉</text>
+    <image src='/image/myself/you.png' class='todetail'></image>
+  </view>
+  <view class="mypublish" bindtap='toHisFollowModel'>
+    <image class="icon_img_gz" src='/image/myself/gz@2x.png'></image>
+    <text>TA的社区</text>
+    <image src='/image/myself/you.png' class='todetail'></image>
+  </view>
+  <view class="mypublish" bindtap='toHisPublic'>
+    <image class="icon_img_gz" src='/image/tabBar/fabu@2x.png'></image>
+    <text>TA的发布 {{hispublishNum}}</text>
+    <image src='/image/myself/you.png' class='todetail'></image>
+  </view>
+</view>
+
+<acd tid="adunit-5c035e3806a155cd"></acd>
+

@@ -1,0 +1,92 @@
+.left{
+  width: 230rpx;
+  float: left;
+  height:1200rpx;
+}
+.lef_txt{
+  padding-left: 44rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+  width: 218rpx;
+  font-size: 28rpx;
+}
+.right{
+  float: left;
+  width: 260rpx;
+  height: 1182rpx;
+  /* background: rgb(250, 250, 250); */
+}
+.active{
+  width: 250rpx;
+  color: #ff4431;
+}
+.active2{
+  color: #ff4431;
+}
+.rig_txt{
+  margin-left: 26rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+  display: block;
+  font-size: 28rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.four{
+  float: left;
+  width: 250rpx;
+  /* background-color: rgb(250, 250, 250); */
+}
+.content{
+   margin-left: 6rpx;
+   height: 66rpx;
+   font-size: 28rpx;
+   line-height: 66rpx;
+   width: 250rpx;
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+}
+.threeActive{
+   color: #ff4431;
+}
+
+/* 弹窗css */
+.pop-para{
+  position: relative;
+}
+.active1{
+  background: rgb(254, 236, 234);
+  color: #FF3C3A;
+}
+.required{
+  font-size: 30rpx;
+  padding-top: 20rpx;
+  padding-left: 33rpx;
+}
+
+.bottom{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background: #FF5555;
+  height: 100rpx;
+  color: #ffffff;
+  font-size: 36rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+
+.arrItem{
+  display:inline-block;
+  width:218rpx;
+  height:66rpx;
+  background: rgba(242,243,247,1);
+  border-radius: 6rpx;
+  margin-right:7px;
+  margin-bottom:15rpx;
+  line-height:66rpx;
+  text-align:center;
+  margin-top: 10rpx;
+}

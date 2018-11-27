@@ -1,0 +1,55 @@
+<!-- <text>商铺信息页/商铺资料---判断是否为商家本人，如果是则可更改信息</text> -->
+<view class='header'>
+  <view class='title'>商铺图像</view>
+  <view class='right'>
+        <image src='{{logoImage}}' wx:if="{{haslogoImage}}" class='tuxiang'></image>
+        <image src='/image/shangpu/moren.png' wx:if="{{!haslogoImage}}" class='tuxiang'></image>
+        <image src='/image/shangpu/jiantou@2x.png' class='jiantou' bindtap='changeImage'></image>
+  </view>
+</view>
+<view class="myRelease">
+    <text>商铺名</text>
+    <text class='text'>{{name}}</text>
+</view>
+<view class="myRelease">
+    <text>绑定手机号</text>
+    <text class='text1'>{{telphone}}</text>
+    <image src='/image/shangpu/jiantou@2x.png' class='jiantou2' bindtap='changePhone'></image>
+  </view>
+  <view class="myRelease">
+    <text>商铺经营地址</text>
+    <view class="text2">{{plateName}}</view>
+  </view>
+  <view class="myRelease">
+    <text>商铺门牌号</text>
+    <text  class='text1'>{{shoplocation}}</text>
+    <image src='/image/shangpu/jiantou@2x.png' class='jiantou2' bindtap='changeNum'></image>
+  </view>
+  <view class="myRelease">
+    <text>商铺负责人</text>
+    <text class='text'>{{bossname}}</text>
+  </view>
+<!-- 更改商铺门牌号弹框 -->
+<view class='shade' wx:if="{{changeNum}}" bindtap='hide'></view>
+<view class='changeNum' wx:if="{{changeNum}}">
+    <view class='change_title'>更改商铺门牌号</view>
+    <textarea class='houseNum' bindinput='houseInput'></textarea>
+    <view class='confirmChange' bindtap='changeHouNum'>确认</view>
+</view>
+<!-- 绑定手机号弹框 -->
+<view class='shade' wx:if="{{hideName}}" bindtap='hide'></view>
+<view class='pop' wx:if="{{hideName}}">
+      <text class='pop_txt'>更改商铺绑定手机号</text>
+      <image src='/image/cuowuTwo@2x.png' class='cuowu' bindtap='hide'></image>
+      <view class='phone'>
+        <image src='/image/zh_icon_phone@2x.png'></image>
+        <input placeholder='请输入您的手机号' class='phe_inp' type= "number" bindinput='inputPhoneNum' maxlength="11" />
+      </view>
+      <view class='valid'>
+          <image class="val_phe" src='/image/sr_icon_phone@2x.png'></image>
+          <input placeholder='请输入您的手机号验证码' type='number'  bindinput='onverify' class='phe_inp2'></input>
+          <image class='val_val' src='/image/sr_btn_hqyz@2x.png' bindtap='getVerificationCode' wx:if="{{verification}}"></image>
+          <button class='count' wx:if="{{ontime}}">{{time}}s</button>
+      </view>
+      <text class='pop_queren' bindtap='onconfirm'>确认</text>
+</view>

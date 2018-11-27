@@ -1,0 +1,469 @@
+.applyModeler_container{
+  width: 100%
+}
+.appler_info{
+  position: relative;
+  width: 100%;
+  height: 82rpx;
+}
+.appler_info image{
+  position: absolute;
+  width: 53rpx;
+  height: 44rpx;
+  top: 38rpx;
+  left: 30rpx;
+}
+.appler_info_text{
+  position: absolute;
+  font-size: 28rpx;
+  font-weight: Regular;
+  color: #FF6767;
+  top: 43rpx;
+  left: 102rpx;
+}
+
+/*  基本信息认证盒子  */
+.apply_info_box{ 
+  width: 710rpx;
+  /* height: 350rpx; */
+  border-top: 1rpx solid #FFFFFF; 
+  border-radius: 20rpx;
+  margin-top: 30rpx;
+  margin-left: 20rpx;
+  box-shadow: 0rpx 8rpx 25rpx 3rpx #D6D7DC;
+}
+.info_phone{
+  position: relative;
+  width: 98%;
+  height: 88rpx;
+  border-bottom: 1px solid #D6D7DC;
+  margin-left: 2%;
+}
+.asterisk{
+  position: absolute;
+  font-size: 28rpx;
+  font-weight: Regular;
+  color: #FF6767;
+  top: 37rpx;
+  left: 18rpx;
+}
+.binding_phone{
+  position: absolute;
+  font-size: 28rpx;
+  font-weight: Regular;
+  color: #2B2B2B;
+  top: 31rpx;
+  left: 52rpx;
+}
+.info_phone input{
+  position: absolute;
+  width: 250rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  top: 20rpx;
+  right: 24rpx;
+  text-align: right;
+}
+/* .one_fontsize{
+  font-size: 28rpx;
+} */
+
+.info_email{
+  position: relative;
+  width: 98%;
+  height: 88rpx;
+  border-bottom: 1px solid #D6D7DC;
+  margin-left: 2%;
+}
+.binding_email{
+  position: absolute;
+  font-size: 28rpx;
+  font-weight: Regular;
+  color: #2B2B2B;
+  top: 31rpx;
+  left: 52rpx;
+}
+.info_email input{
+  position: absolute;
+  width: 250rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  top: 20rpx;
+  right: 24rpx;
+  text-align: right;
+}
+
+.info_WXname{
+  position: relative;
+  width: 98%;
+  height: 88rpx;
+  margin-left: 2%;
+}
+.binding_WXname{
+  position: absolute;
+  font-size: 28rpx;
+  font-weight: Regular;
+  color: #2B2B2B;
+  top: 31rpx;
+  left: 52rpx;
+}
+.name{
+  position: absolute;
+  font-size: 28rpx;
+  font-weight: Regular;
+  color: #2B2B2B;
+  top: 25rpx;
+  right: 31rpx;
+}
+
+/*  身份信息认证盒子  */
+.true_info_box{ 
+  width: 710rpx;
+  height: 767rpx;
+  border-top: 1rpx solid #FFFFFF; 
+  border-radius: 20rpx;
+  margin-top: 30rpx;
+  margin-left: 20rpx;
+  box-shadow: 0rpx 8rpx 25rpx 3rpx #D6D7DC;
+}
+.info_idCard{
+  position: relative;
+  width: 98%;
+  height: 88rpx;
+  border-bottom: 1px solid #D6D7DC;
+  margin-left: 2%;
+}
+.idcard_class{
+  position: absolute;
+  font-size: 28rpx;
+  color: #2B2B2B;
+  top: 30rpx;
+  right: 60rpx;
+}
+.info_idCard image{
+  position: absolute;
+  width: 18rpx;
+  height: 34rpx;
+  top: 32rpx;
+  right: 20rpx;
+}
+
+.info_trueName{
+  position: relative;
+  width: 98%;
+  height: 88rpx;
+  border-bottom: 1px solid #D6D7DC;
+  margin-left: 2%;
+}
+.info_trueName input{
+  position: absolute;
+  width: 250rpx;
+  height: 40rpx;
+  font-size: 32rpx;
+  top: 20rpx;
+  right: 24rpx;
+  text-align: right;
+}
+
+.info_idNum{
+  position: relative;
+  width: 98%;
+  height: 88rpx;
+  border-bottom: 1px solid #D6D7DC;
+  margin-left: 2%;
+}
+.info_idNum input{
+  position: absolute;
+  width: 250rpx;
+  height: 40rpx;
+  font-size: 32rpx;
+  top: 20rpx;
+  right: 24rpx;
+  text-align: right;
+}
+
+.info_idCardPic{
+  position: relative;
+  width: 100%;
+  height: 500rpx;
+}
+.id_pic{
+  position: absolute;
+  width: 300rpx;
+  height: 200rpx;
+  border: 1px solid #cccccc;
+  left: 200rpx;
+  top: 125rpx;
+  overflow: hidden;
+}
+.id_pic image{
+  width: 100%;
+  height: 100%;
+}
+.choose_pic{
+  position: absolute;
+  width: 470rpx;
+  height: 374rpx;
+  top: 88rpx;
+  left: 120rpx;
+  background: #D2D2D2;
+  border-radius: 20rpx;
+}
+.chooose_pic_textOne{
+  position: absolute;
+  font-size: 24rpx;
+  font-weight: Regular;
+  color: #8E8F91;
+  top: 44rpx;
+  left: 101rpx;
+}
+.choose_pic_imgOne{
+  position: absolute;
+  width: 400rpx;
+  height: 60rpx;
+  top: 86rpx;
+  left: 35rpx;
+}
+.chooose_pic_textTwo{
+  position: absolute;
+  width: 244rpx;
+  height: 144rpx;
+  font-size: 24rpx;
+  font-weight: Regular;
+  color: #646665;
+  top: 190rpx;
+  left: 192rpx;
+}
+.choose_pic_imgTwo{
+  position: absolute;
+  width: 129rpx;
+  height: 137rpx;
+  top: 196rpx;
+  left: 34rpx;
+}
+
+/*  其他信息盒子  */
+.other_info_box{ 
+  width: 710rpx;
+  /* height: 707rpx; */
+  border-top: 1rpx solid #FFFFFF; 
+  border-radius: 20rpx;
+  margin-top: 30rpx;
+  margin-left: 20rpx;
+  box-shadow: 0rpx 8rpx 25rpx 3rpx #D6D7DC;
+}
+.info_jianjie{
+  position: relative;
+  width: 98%;
+  height: 100rpx;
+  border-bottom: 1px solid #D6D7DC;
+  margin-left: 2%;
+}
+.info_jianjie input{
+  position: absolute;
+  width: 250rpx;
+  height: 40rpx;
+  font-size: 32rpx;
+  top: 30rpx;
+  right: 24rpx;
+  text-align: right;
+}
+
+.info_workPic{
+  position: relative;
+  width: 100%;
+  height: 502rpx;
+}
+.work_pic{
+  position: absolute;
+  width: 300rpx;
+  height: 200rpx;
+  border: 1px solid #cccccc;
+  left: 200rpx;
+  top: 125rpx;
+  overflow: hidden;
+}
+
+/*  */
+.choose_xieyi{
+  position: relative;
+  width: 100%;
+  height: 30rpx;
+  margin-top: 100rpx;
+}
+.yuan1{
+  position: absolute;
+  width: 28rpx;
+  height: 28rpx;
+  border-radius: 18rpx;
+  border: 4rpx solid #FF6767;
+  top: 1rpx;
+  left: 172rpx;
+}
+.yuan2{
+  position: absolute;
+  width: 28rpx;
+  height: 28rpx;
+  border-radius: 18rpx;
+  border: 4rpx solid #FF6767;
+  background: #FF6767;
+  top: 1rpx;
+  left: 172rpx;
+}
+.choose_xieyi text{
+  position: absolute;
+  font-size: 24rpx;
+  font-weight: 600;
+  color: #2388D9;
+  top: 2rpx;
+  left: 222rpx;
+}
+
+  /*  */
+.identification{
+  position: relative;
+  width: 100%;
+  height: 100rpx;
+  margin-top: 40rpx;
+}
+.identification image{
+  position: absolute;
+  width: 560rpx;
+  height: 60rpx;
+  left: 95rpx;
+}
+
+/* 证件选择  */
+.paper_class{
+  z-index: 999;
+  position: fixed;
+  bottom: -300rpx;
+  width: 100%;
+  border-top: 1rpx solid #FFFFFF;
+  background-color: #FFFFFF;
+  border-radius: 40rpx;
+  box-shadow: 0rpx -12rpx 25rpx 3rpx #D6D7DC;  
+}
+.paper_class2{
+  z-index: 999;
+  position: fixed;
+  bottom: -300rpx;
+  width: 100%;
+  border-top: 1rpx solid #FFFFFF;
+  background-color: #FFFFFF;
+  border-radius: 40rpx;
+  box-shadow: 0rpx -12rpx 25rpx 3rpx #D6D7DC;
+  animation: move 0.5s infinite;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+}
+@keyframes move{
+	from{bottom: -300rpx;}
+	to{bottom: 0rpx;}
+}
+.zhengjian{
+  width: 98%;
+  height: 70rpx;
+  margin-left: 2%;
+  border-bottom: 1px solid #D6D7DC;
+}
+.zhengjian text{
+  font-size: 28rpx;
+  color: #2B2B2B;
+  margin-left: 20rpx;
+}
+
+/* 身份选择  */
+.personal_class{
+  z-index: 999;
+  position: fixed;
+  bottom: -380rpx;
+  width: 100%;
+  border-top: 1rpx solid #FFFFFF;
+  background-color: #FFFFFF;
+  border-radius: 40rpx;
+  box-shadow: 0rpx -12rpx 25rpx 3rpx #D6D7DC;  
+}
+.personal_class2{
+  z-index: 999;
+  position: fixed;
+  bottom: -380rpx;
+  width: 100%;
+  border-top: 1rpx solid #FFFFFF;
+  background-color: #FFFFFF;
+  border-radius: 40rpx;
+  box-shadow: 0rpx -12rpx 25rpx 3rpx #D6D7DC; 
+  animation: move 0.5s infinite;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+}
+@keyframes move{
+	from{bottom: -380rpx;}
+	to{bottom: 0rpx;}
+}
+.zhengjian{
+  width: 98%;
+  height: 70rpx;
+  margin-left: 2%;
+  border-bottom: 1px solid #D6D7DC;
+}
+.zhengjian text{
+  width: 100%;
+  font-size: 28rpx;
+  background-color: #FFFFFF;
+  color: #2B2B2B;
+  margin-left: 20rpx;
+}
+/* 手机号认证部分 */
+.aster_phone{
+  font-size:28rpx;
+  font-weight:Regular;
+  color:#FF6767;
+ 
+}
+.bindphone{
+  width:98%;
+  height:88rpx;
+  border-bottom:1px solid #D6D7DC;
+  margin-left:2%;
+  vertical-align:middle;
+  line-height:88rpx;
+}
+.phone_num{
+  font-size:28rpx;
+  font-weight:Regular;
+  color:#2B2B2B;
+  display: inline-block;
+}
+.phone_input{
+  width:300rpx;
+  height:40rpx;
+  font-size:28rpx;
+  display: inline-block;
+  margin-left: 10rpx;
+  /* text-align: center; */
+  vertical-align: middle;
+}
+.phonebtn{
+  width:141rpx;
+  height:40rpx;
+  font-size:24rpx;
+  color:#ffffff;
+  background:#ff5555;
+  float:right;
+  margin:23rpx 40rpx;
+  padding:0;
+  line-height:42rpx;
+  border-radius: 20rpx;
+}
+.count{
+  float: right;
+  /* bottom: 8rpx; */
+  right: 50rpx;
+  width: 106rpx;
+  height: 50rpx;
+  font-size: 28rpx;
+  background-color: rgb(144, 144, 144);
+  top: 22rpx;
+  line-height: 50rpx;
+}

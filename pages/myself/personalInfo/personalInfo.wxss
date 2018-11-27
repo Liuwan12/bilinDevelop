@@ -1,0 +1,49 @@
+.container{
+  position: fixed;
+  width: 100%;
+  height: 1334rpx;
+  background: #F7F7F7;
+  top: 0;
+}
+.personal_ID{
+  position: relative;
+  width: 100%;
+  height: 90rpx;
+  background: #FFFFFF;
+  border-bottom: 1px solid #D3D3D3;
+}
+.personal_ID_text{
+  position: absolute;
+  font-size: 32rpx;
+  font-weight: Regular;
+  font-family: PingFang-SC-Regular;
+  color: #2B2B2B;
+  top: 28rpx;
+  left: 32rpx;
+}
+
+.personal_sex{
+  position: relative;
+  width: 100%;
+  height: 90rpx;
+  background: #FFFFFF;
+  border-bottom: 1px solid #D3D3D3;
+}
+.personal_sex_text{
+  position: absolute;
+  font-size: 32rpx;
+  font-weight: Regular;
+  font-family: PingFang-SC-Regular;
+  color: #2B2B2B;
+  top: 28rpx;
+  left: 32rpx;
+}
+
+.user_agreement{
+  text-align: center;
+  font-size: 24rpx;
+  color: #FF6767;
+  position: absolute;
+  top: 170rpx;
+  margin: 40rpx 240rpx;
+}

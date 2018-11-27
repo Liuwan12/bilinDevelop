@@ -1,0 +1,222 @@
+.container{
+  position: fixed;
+  width: 100%;
+  height: 1334rpx;
+  background: #F7F7F7;
+  top: 0rpx;
+}
+
+/* 灰底 */
+.shade{
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  left: 0;
+  top: 0;
+}
+.personal{
+  position: relative;
+  width: 100%;
+  height: 160rpx;
+}
+.touxiang{
+  width: 82rpx;
+  height: 82rpx;
+  margin-left:16rpx;
+  margin-top:40rpx;
+  float: left;
+}
+.touxiang image{
+   width: 100%;
+   height: 100%;
+}
+.nameLine{
+  display: inline-block;
+  width:520rpx;
+  margin-left:20rpx;
+  margin-top:50rpx;
+}
+.name{
+  font-size: 28rpx;
+}
+.img{
+  width: 28rpx;
+  height: 28rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  position:relative;
+  top:5rpx;
+}
+.WXnum{
+  font-size: 28rpx;
+}
+.change{
+  margin-left: 18rpx;
+  width: 40rpx;
+  height: 40rpx;
+  position:absolute;
+  top:11rpx;
+}
+.nonePhone{
+  color:#ff4400;
+  font-size: 26rpx;
+  height:66rpx;
+  line-height:66rpx;
+  display:inline-block;
+  background:#ebebeb;
+  padding: 0;
+}
+.nonePhone::after{
+  border:none;
+}
+.line{
+  width: 100%;
+  height: 2rpx;
+  color: red;
+}
+.itemclass{
+  width: 90%;
+  height: 81rpx;
+  border-bottom: 2rpx solid #ccc;
+  margin: 0 auto;
+}
+.itemClasses{
+  background: #ffffff;
+  width: 95%;
+  margin: 0 auto;
+  border-radius: 20rpx;
+  position:relative;
+}
+.itemClasses::before{
+  position: absolute;
+  left: 20px;
+  top: -36rpx;
+  content: '';
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid #ffffff;
+  border-left: 10px solid transparent;
+  border-right:10px solid transparent;
+  z-index: 1
+}
+.icon_img{
+  width: 39rpx;
+  height: 39rpx;
+  margin-top:25rpx;
+  float: left;
+}
+.itemclass text{
+  font-size: 28rpx;
+  letter-spacing: 4rpx;
+  margin-left: 30rpx;
+  line-height: 81rpx;
+}
+.bottom{
+  margin-bottom:25px;
+  border:none;
+}
+.pop{
+  top: 0;
+  left: 20rpx;
+  height: 514rpx;
+  width: 710rpx;
+  position: fixed;
+  margin-top: 290rpx;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20rpx;
+  z-index: 999;
+  border:1rpx solid #ff4400;
+}
+.cuowu{
+  width: 23rpx;
+  height: 23rpx;
+  float: right;
+  margin-right: 22rpx;
+  margin-top: 22rpx;
+}
+input{
+  display: inline-block;
+  font-size: 34rpx;
+  padding-left: 22rpx;
+  width: 370rpx;
+}
+.phe_inp{
+  vertical-align: middle;
+}
+.pop_txt{
+  padding-left: 32rpx;
+  margin-top: 27rpx;
+  float: left;
+}
+.phone{
+  height: 89rpx;
+  margin: 49rpx 0 30rpx 55rpx;
+  border-bottom: 1px solid rgb(190, 190, 190);
+  width: 610rpx;
+  display: inline-block;
+  position: relative;
+  line-height: 89rpx;
+}
+.phe_inp{
+  overflow: visible;
+  width: 390rpx;
+  vertical-align: middle;
+}
+.phe_inp2{
+  overflow: auto;
+  width: 390rpx;
+  vertical-align: middle;
+}
+.phone image{
+  width: 40rpx;
+  height: 43rpx;
+  vertical-align: middle;
+
+}
+.valid{
+  margin-left: 55rpx;
+  margin-bottom: 80rpx;
+  border-bottom: 1px solid rgb(190, 190, 190);
+  float: left;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+.valid .val_phe{
+  width: 40rpx;
+  height: 43rpx;
+  vertical-align: middle;
+}
+.valid .val_val{
+  width: 160rpx;
+  height: 60rpx;
+  vertical-align: middle;
+}
+.count{
+  float: right;
+  bottom: 8rpx;
+  width: 106rpx;
+  height: 60rpx;
+  font-size: 28rpx;
+  background-color: rgb(144, 144, 144);
+  margin-left: 35rpx;
+  top: 10rpx;
+}
+.pop_queren{
+  width: 169rpx;
+  height: 66rpx;
+  margin-left: 270rpx;
+  background-color: rgb(255, 85, 85);
+  color: #ffffff;
+  border-radius: 25rpx;
+  font-size: 30rpx;
+  text-align: center;
+  display: inline-block;
+  line-height: 66rpx;
+}
+.todetail{
+  float:right;
+  width:35rpx;
+  height:35rpx;
+  margin-top:20rpx;
+}

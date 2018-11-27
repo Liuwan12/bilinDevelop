@@ -1,0 +1,28 @@
+<ad unit-id="adunit-c623be8d379b78b2"></ad>
+ <view class="menu_box">
+   <view class='menu_content'  data-current="0" catchtap="selectTap">
+      <text class='menu1 {{menuTapCurrent==null|menuTapCurrent=="0"?"active":""}}'>关注的人</text>
+    </view>
+    <view class='menu_content' data-current="1" catchtap="selectTap">
+      <text class='menu1 {{menuTapCurrent=="1"?"active":""}}' >推荐的人</text>
+    </view>
+</view>
+<!-- <swiper   circular="false" current="{{menuTapCurrent}}" class="swiper-box" duration="50" style="height:{{winHeight}}rpx" bindchange="switchTab">
+<swiper-item wx:for="{{[0,1]}}" wx:key="key">
+<scroll-view scroll-y="true" class="scoll-h" > -->
+  <view  wx:for="{{showList}}" wx:key="key"  wx:for-index="idx">
+  <view class="info_box">
+  <view bindtap='toHisInfo' id='{{idx}}' class='toInfo'>
+        <image src="{{item.avatar}}"></image>
+        <text class="info_box_name">{{item.nickname}}</text>
+        <view class='usersex' id="{{idx}}">
+            <image src='{{item.sex}}'></image>
+        </view>
+  </view>
+    <view class="giveup_follow" catchtap='giveup' id="{{idx}}" wx:if="{{showList[idx].onfocus}}">+关注</view>
+  <view class="giveup_follow" catchtap='giveup' id="{{idx}}" wx:if="{{showList[idx].nonfocus}}">已关注</view>
+  </view> 
+  </view>
+  <!-- </scroll-view>
+  </swiper-item> -->
+<!-- </swiper> -->

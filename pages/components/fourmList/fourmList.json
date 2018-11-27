@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "acd": "/pages/components/ad/ad"
+  }
+}

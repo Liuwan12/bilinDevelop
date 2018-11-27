@@ -1,0 +1,26 @@
+<!-- <text>服务费缴纳页面</text> -->
+<view class='serviceTop' wx:if="{{hasPay}}">
+    <view class='service_txt'>正在使用淘比邻商铺服务套餐</view>
+    <view class='service_date'>将于{{expirationdate}}到期</view>
+</view>
+<view class='options' wx:for="{{packageList}}"  wx:key="key" id="{{idx}}" wx:for-index="idx">
+  <view class='{{active==idx?"hasoption":"option"}}' bindtap='choosePack' id="{{idx}}"></view>
+  <view class='opt_text'>{{item.name}}:</view>
+  <view class='opt_text'>{{item.money}}元/{{item.duration}}月</view>
+  <view class='detail' bindtap='todetail' id="{{idx}}">详情</view>
+</view>
+<view class='pay' bindtap='toPayPackage'>支付</view>
+<view class='payfailed' wx:if="{{showfailed}}">
+    <image src='/image/cuowuTwo@2x.png' class='cuowu' bindtap='cancelpay'></image>
+    <view>服务套餐未缴纳成功</view>
+    <view class='payagain' bindtap='payagain'>重新缴纳</view>
+</view>
+<view>
+  <loading hidden="{{hidden}}" bindchange="loadingChange">
+    支付中...
+  </loading>
+</view>
+<view class='paySuccess' wx:if="{{paySuccess}}">
+  <view class='suc_text'>选择套餐并缴费成功我们会在第一时间进行审核并未您开通有关服务</view>
+  <view class='suc_button' bindtap='toMypage'>确认</view>
+</view>

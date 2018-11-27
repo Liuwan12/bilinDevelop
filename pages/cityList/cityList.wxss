@@ -1,0 +1,5 @@
+/* pages/cityList/cityList.wxss */
+.intro {
+  margin: 30px;
+  text-align: center;
+}

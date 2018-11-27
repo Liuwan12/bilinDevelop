@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "淘比邻:我的红包",
+  "usingComponents": {
+    "acd": "/pages/components/ad/ad"
+  }
+}

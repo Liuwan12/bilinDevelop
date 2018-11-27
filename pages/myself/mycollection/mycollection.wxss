@@ -1,0 +1,43 @@
+/* 选项卡 start */
+ .tabButtonAll{
+  display:  flex;
+  height:  100rpx;
+  border-bottom:  solid  1rpx  #e9e9e9;
+  font-size:28rpx;
+  line-height:  100rpx;
+}
+
+.tabBtn{
+    display:  inline-block;
+    height:  90rpx;
+    line-height:  90rpx;
+    font-size:32rpx;
+    transition:all  0.3s;
+    width:20%;
+    text-align:center;
+    }
+.line{
+  width: 650rpx;
+  height: 2rpx;
+  margin: 0 auto;
+  background: #e9e9e9;
+}
+
+
+.active{
+  color: #ff4400;
+  position: relative;
+  font-size: 32rpx;
+}
+.active::before{
+    position: absolute;
+    left: 29px;
+    top: 33px;
+    content: '';
+    border-top: 1px solid #ff4400;
+    border-bottom: 2px solid #ff4400;
+    border-left: 16px solid #ff4400;
+    /* border-right:4px solid #ff4400; */
+}
+/* 选项卡 end */
+

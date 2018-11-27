@@ -1,0 +1,10 @@
+.imgDetail{
+  width:80%;
+  height:800rpx;
+  margin:0 auto;
+}
+.detail{
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}

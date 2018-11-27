@@ -1,0 +1,143 @@
+<import src="../../../tabBar/tabBar.wxml"/>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
+<view class="PlateDetail">
+  <!-- <view class='select' catchtap="selectTap2" wx:if="{{hasList}}"> 
+      <view wx:if="{{quzk}}" class='zhan'>我要<view>看图</view></view>
+      <view wx:if="{{quzd}}" class='zhan'>只看<view>文字</view></view>
+  </view>  -->
+   <!-- 公告栏 -->
+  <template name="roll">
+    <block>
+      <view class='sx_lunbo'>
+        <text class='red'>社区头条:</text>
+        <swiper class='sx_swiper' autoplay interval="5000" duration="3000" circular>
+          <swiper-item wx:for="{{noticeListArr}}" wx:key="" catchtap="tonoticeModel" wx:for-index="idx" id="{{idx}}">
+            <view class='reds'>{{item}}</view>
+          </swiper-item> 
+        </swiper>
+      </view>
+    </block>
+  </template>
+  <template is="roll" data="{{noticeListArr}}" />
+   <view class='menu_box'>
+    <text class='menu1 {{menuTapCurrent==null|menuTapCurrent=="3"?"borders":""}}'  catchtap='menuTap' data-current="3">拼团</text>
+    <text class='menu1 {{menuTapCurrent=="1"?"borders":""}}' 
+      catchtap='menuTap' data-current="1">租房</text>
+      <text class='menu1 {{menuTapCurrent=="0"?"borders":""}}' 
+      catchtap='menuTap' data-current="0">闲置</text>
+      <text class='menu1 {{menuTapCurrent=="2"?"borders":""}}' 
+      catchtap='menuTap' data-current="2">求助</text>
+   </view>
+   
+  <view class='header' wx:for="{{platedetail}}" wx:key="key" >
+       <view class='img'>
+          <image src='/image/dingwei@2x.png'></image>
+       </view>
+       <view class="hea_txt">{{item.plate.title}}</view>
+       <text class='hea_rea'>发布：{{item.forumNum}}</text>
+       <view class='focus'>
+          <view class='normalText'>
+            邻粉：
+          </view>
+          <view wx:for="{{focusUseravater}}" style='float:left' wx:for-index="idx" wx:key="key" id="{{idx}}" wx:if="{{hasfocus}}" bindtap='touserInfo'>
+             <image src='{{focusUseravater[idx]}}'></image>
+          </view>
+          <text class='waitText' wx:if="{{hasfocus}}">等{{item.focusNum}}位</text>
+           <view class='focus' wx:if="{{nofocus}}">暂无</view>
+       </view>
+       
+       <text class='btn' bindtap='oncancel' wx:if="{{cancelFocus}}">已关注</text>
+       <text class='btn' bindtap='oncancel' wx:if="{{toFocus}}">+关注</text>
+  </view>
+
+  <view class='forumdetail'>
+       <view wx:for="{{ForumMarkList}}" wx:key="key" class="{{item.setIsBody?'body':'bodytwo'}}" wx:for-index="idx">
+    <!-- <view class='bodytopline'></view> -->
+    <view class="body_top">
+      <image src='{{item.setFirstImgs[0]}}' wx:if="{{item.setIsShow}}" bindtap='onpubDetail' id="{{idx}}"></image>
+      <view class="body_top_info">
+        <view class="info_title" bindtap='onpubDetail' id="{{idx}}">
+          <view class='title'>
+            <text>{{item.title}}</text>
+          </view>
+          <view class='appointent-date'>
+            <view class="appointent-date-div" wx:for="{{item.setClassNames}}" wx:key="" data-key='{{index}}'>
+              <view class="flex-item">
+                <view class='data_name'>{{item}}</view>
+              </view>
+            </view>  
+          </view>
+          <view>
+           <text class='price' wx:if="{{newprice}}">¥{{item.newPrice}}</text>
+           <text class='price' wx:if="{{oldprice}}">¥{{item.oldPrice}}</text>
+           <view class="{{item.setIsBody?'aaa':'zaaa'}}">{{item.createTime}}</view>
+          </view>
+          <text class='location'>{{item.plateName}}</text> 
+        </view>
+      </view>
+    </view>
+    <view class='delforum' bindtap='delforum' id='{{idx}}' wx:if="{{delForum}}">删除</view>
+    <view class='body_open' wx:if="{{item.setOpenBodyShow}}">
+      <view class="open_body" bindtap='smallOpen' id='{{idx}}'>
+        <image src='/image/zhankai@2x.png'></image>
+        <text>我要看图</text>
+      </view>
+    </view>
+
+    <view class="body_bottom" wx:if="{{item.setIsShow}}">
+      <view class="bottom_four" bindtap='smallPucker' id='{{idx}}'>
+        <image src='/image/zhedie@2x.png'></image>
+        <text>只看文字</text>
+      </view>
+    </view>
+    <view class='yzr' wx:if="{{item.yzr}}">
+      <text wx:if="{{transfer}}">已成交</text>
+      <text wx:if="{{rent}}">已租赁</text>
+      <text wx:if="{{group}}">已成团</text>
+    </view>
+    <view class='yzrh' wx:if="{{item.yzrh}}">
+      <text wx:if="{{transfer}}">已成交</text>
+      <text wx:if="{{rent}}">已租赁</text>
+      <text wx:if="{{group}}">已成团</text>
+    </view>
+  </view>
+   <view class="toLoading" wx:if="{{loadingShow}}">
+    <image src='/image/jiazai@2x.png'></image>
+  </view>
+  </view>
+  <view class="toLoading" wx:if="{{loadingShow}}">
+    <image src='/image/jiazai@2x.png'></image>
+  </view>
+   <view class='publish' wx:if="{{isshoppublish}}">
+     <view class='zwfb_img'>
+        <image src='/image/shangpu/sp@2x.png'></image>
+     </view>
+     <view class='pub_text'>
+        该位置还没有底商信息哦❤️
+     </view>
+  </view>
+  <view class='publish' wx:if="{{isleasepublish}}">
+     <view class='zwfb_img'>
+        <image src='/image/regionModel/ershou@2x.png'></image>
+     </view>
+     <view class='pub_text'>
+        赶快在这个位置发布你的第一个闲置物品信息吧❤️
+     </view>
+  </view>
+  <view class='publish' wx:if="{{ishousepublish}}">
+     <view class='zwfb_img'>
+        <image src='/image/regionModel/zf@2x.png'></image>
+     </view>
+     <view class='pub_text'>
+         赶快在这个位置发布你的第一个直接房源或者求租信息吧❤️
+     </view>
+  </view>
+  <view class='publish' wx:if="{{isjoinpublish}}">
+     <view class='zwfb_img'>
+        <image src='/image/regionModel/pt@2x.png'></image>
+     </view>
+     <view class='pub_text'>
+     赶快在这个位置发布你的第一个直接房源或者求租信息吧❤️
+     </view>
+  </view>
+</view>

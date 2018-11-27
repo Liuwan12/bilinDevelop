@@ -1,0 +1,33 @@
+<!-- 砍价 -->
+<view>
+  <view style='margin-left:10rpx;'>5人正在砍价</view>
+  <view>
+      <view class='index'>1</view>
+      <view class='avater'>
+        <image></image>
+      </view>
+      <view class='username'>刘婉</view>
+      <view class='usersex'>
+        <image></image>
+      </view>
+      <view class='content'>
+        <view>
+          <view style='width:90%;'>
+            <view class='take' style='margin-left:{{data1}}%'>白拿60</view>
+            <view class='quan1' style='left:{{data1}}%;'></view>
+          </view>
+          <progress percent="{{data1}}" class='pro' activeColor="yellow" stroke-width="3"/>
+          <view class='quan2'></view>
+          <view class='maxprice'>Max价1000</view>
+        </view>
+        <view>还差99刀砍价成功</view>
+        <view>剩余23:49:10</view>
+        <view class='con_btn' wx:if="{{hasbargin}}">已砍一刀</view>
+        <view class='con_btn' bindtap='Tooneknife' wx:if="{{!hasbargin&&!alreadyBargin}}">砍一刀</view>
+        <view wx:if="{{alreadyBargin}}">已砍价成功</view>
+        <view style='display:inline-block;'>
+          <button data-id="shareBtn" open-type="share" class='con_btn' data-index="3">分享</button>
+        </view>
+      </view>
+  </view>
+</view>

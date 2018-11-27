@@ -1,0 +1,52 @@
+<view wx:for="{{listArr}}" wx:key="key" wx:for-index="idx" class='body'>
+      <!-- 列表 -->
+      <view class="body_top_info">
+        <view class="info_title">
+          <view class="{{item.isopenId==true&&pageFlag=='index'?'touxiang1':'touxiang'}}" id="{{idx}}" bindtap='toUserDetail'>
+            <image src='{{item.avater}}'></image>
+          </view>
+          <view>
+            <view class="{{item.isopenId==true&&pageFlag=='index'?'nickName1':'nickName'}}" id="{{idx}}">{{item.nickName}}</view>
+            <view class="{{item.isopenId==true&&pageFlag=='index'?'usersex1':'usersex'}}" id="{{idx}}">
+              <image src='{{item.sex}}'></image>
+            </view>
+            <view style='height:30rpx;'></view>
+          </view>
+        <!-- 内容区域-->
+          <view class="{{item.isopenId&&pageFlag=='index'?'content1':'sanjiao'}}  {{!item.hasredPaper&&!item.isopenId?'orange1 sanjiao3':''}}  {{!item.hasredPaper&&item.isopenId?'orange1 sanjiao4':''}}" bindtap='toInfoModel' id="{{idx}}">
+                <view class='title'>
+                  <text>{{list[item.flag-1].name}}:{{item.title}}</text>
+                </view>
+                
+                <view wx:if="{{item.flag==1}}||{{item.flag==2}}">
+                  <text class='price' wx:if="{{item.hasnewprice}}">¥{{item.newPrice}}</text>
+                  <text class='price' wx:if="{{item.hasoldpice}}">¥{{item.oldPrice}}</text>
+                </view>       
+                  <view class='wrapper_class' wx:if="{{item.setClassNames}}">
+                  <view class="appointent-date-div" wx:for="{{item.setClassNames}}" wx:key="index" data-key='{{index}}'>
+                  <view class='data_name'>{{item}}</view>
+                  </view>
+                </view>
+                <view class='info_bottom'>
+                  <image src='/image/dingwei@2x.png' class='dingwei'></image>
+                  <view class='location'>{{item.plateName}}</view>
+                  <view wx:if="{{pageFlag=='index'}}" class='distance'>{{item.distance}}km</view>
+                </view> 
+        
+                <view class='redpaper'>
+                  <image src='/image/smallmodel/hasredpaper.png' ></image>
+                </view>
+          </view>   
+        </view>
+      </view>
+      
+      <view class="{{item.isopenId==true&&pageFlag=='index'?'yzrmy':'yzr'}} yzrall" wx:if="{{item.isDeal==1||item.pastDue==false}}">
+       <text>{{list[item.flag-1].deal}}</text>
+      </view>
+      <!-- 广告 -->
+      <acd wx:if="{{item.showad}}" tid="adunit-5c035e3806a155cd"></acd>
+      <view class="toLoading" wx:if="{{loadingShow}}">
+        <image src='/image/jiazai@2x.png'></image>
+        <view style='text-align:center;font-size:26rpx;margin-top:10rpx;'>加载中......</view>
+      </view>
+    </view>

@@ -1,0 +1,38 @@
+<template name="tabBar">
+  <view class="tabBar">    
+    <view class="tabBar-item">
+      <navigator url="{{tabBar[0].pagePath}}" open-type='redirect' class='none'>
+        <view>
+          <image class="icon" src='{{tabBar[0].iconPath}}'></image>
+        </view>
+ 
+        <view class="tabBarText">
+          <text class="{{tabBar[0].current== 1 ? 'tabBarCurrentText' :'tabBarNoSelText'}}" >{{tabBar[0].text}}</text>
+        </view>
+      </navigator>
+    </view>
+     
+    <!-- <view class="tabBar-item">
+      <navigator url="{{tabBar[1].pagePath}}" open-type='{{tabBar[1].pageTum}}' class='none'>
+        <view>
+          <image class='icon' src='{{tabBar[1].iconPath}}'></image>
+        </view>
+
+        <view class='tabBarText'>
+          <text class="tabBarNoSelText">{{tabBar[1].text}}</text>
+        </view>
+      </navigator>
+    </view> -->
+
+    <view class="tabBar-item">
+      <navigator url="{{tabBar[1].pagePath}}" open-type='redirect' class='none'>
+        <view>
+          <image class="icon" src='{{tabBar[1].iconPath}}'></image>
+        </view>
+        <view class="tabBarText">
+          <text class="{{tabBar[1].current== 1 ? 'tabBarCurrentText' :'tabBarNoSelText'}}">{{tabBar[1].text}}</text>
+        </view>
+      </navigator>   
+    </view>
+  </view>
+</template>

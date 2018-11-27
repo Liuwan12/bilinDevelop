@@ -1,0 +1,9 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#FF5555",
+  "navigationBarTitleText": "比邻",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "keyboard": "/components/keyboard/index"
+  }
+}

@@ -1,0 +1,249 @@
+/*  评论详情  */
+.comment_box{
+  width: 100%;
+}
+
+.commentHeadView{
+  padding-top: 12rpx;
+  padding-left: 36rpx;
+  height: 65rpx;
+  vertical-align: center;
+  border-bottom: solid 1px #efeeee;
+}
+.commentHeadView text{
+  font-size: 32rpx;
+  color: #2B2B2B;
+}
+.jiange{
+  height: 44rpx;
+  background: #F2F3F7;
+  width: 100%;
+  position:fixed;
+  bottom: 118rpx;
+}
+.comment1{
+  position:absolute;
+  top:30rpx;
+  left:110rpx;
+}
+.comment2{
+  float:right;
+  margin-top:15rpx;
+  margin-right: 20rpx;
+}
+.commentInfo{
+  width: 100%;
+}
+.commentSection{
+  position: relative;
+  width: 100%;
+}
+/*  一级评论  */
+.commentFrist{
+  position: relative;
+  width: 100%;
+  bottom: 20px;
+}
+.commentFrist_imgOne{
+  width: 82rpx;
+  height: 82rpx;
+  margin-top:29rpx;
+  margin-left:16rpx;
+}
+.commentFrist_imgOne1{
+  width: 82rpx;
+  height: 82rpx;
+  margin-top:19rpx;
+  margin-right:16px;
+  float:right;
+}
+.commentFrist_name{
+  font-size: 28rpx;
+  color: #ff4400;
+  float: left;
+}
+.commentFrist_time{
+  font-size: 24rpx;
+  color: #939393;
+  display: block;
+}
+.commentFrist_content{
+  font-size:30rpx;
+  width:540rpx;
+  display:inline-block;
+  background:#ffffff;
+  height:100rpx;
+  border-radius:20rpx;
+  padding-left:10rpx;
+  padding-top:10rpx;
+  border: 2rpx solid #e4e4e4;
+  position:relative;
+  top:45rpx;
+  left: 20rpx;
+}
+.commentFrist_content1{
+  font-size:30rpx;
+  width:540rpx;
+  display:inline-block;
+  background:#ffffff;
+  min-height:100rpx;
+  border-radius:20rpx;
+  padding-left:10rpx;
+  padding-top:10rpx;
+  border:2rpx solid #e4e4e4;
+  position:relative;
+  top:25rpx;
+  left:60rpx;
+}
+.speak{
+  position:relative;
+  top:-18rpx;
+}
+.his::before{
+    position: absolute;
+    left: -18px;
+    top: 10px;
+    content: '';
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 10px solid transparent;
+    border-right:10px solid #ffffff;
+    z-index: 1
+}
+.commentSecond_content::before{
+    position: absolute;
+    left: -18px;
+    top: 10px;
+    content: '';
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 10px solid transparent;
+    border-right:10px solid #ffffff;
+    z-index: 1
+}
+.commentFrist_content1::before{
+    position: absolute;
+    right: -17px;
+    top: 6px;
+    content: '';
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 10px solid #ffffff;
+    border-right:10px solid transparent;
+    z-index: 1
+}
+.commentFrist_imgTwo{
+  width: 34rpx;
+  height: 33rpx;
+  position:absolute;
+  right:10rpx;
+  bottom: 10rpx;
+}
+/*  二级评论  */
+.commentSecond{
+  position: relative;
+  width: 100%;
+  margin-top: 25rpx;
+  height: 170rpx;
+}
+.commentSecond_imgOne{
+  width: 82rpx;
+  height: 82rpx;
+  float:left;
+  margin-left:16rpx;
+}
+.commentSecond_name{
+  font-size: 28rpx;
+  color: #ff4400;
+  margin-left:20rpx;
+  float: left;
+}
+.commentSecond_time{
+  position: absolute;
+  font-size: 24rpx;
+  font-weight: Regular;
+  color: #939393;
+  top: 35rpx;
+  right: 8rpx;
+}
+.commentSecond_content{
+  position:absolute;
+  top:50rpx;
+  left:120rpx;
+  font-size:30rpx;
+  width:540rpx;
+  background:#ffffff;
+  min-height:100rpx;
+  border-radius:20rpx;
+  padding-left:10rpx;
+  padding-top:10rpx;
+  border:2rpx solid #e4e4e4;
+  padding-right: 10rpx;
+  max-height:200rpx;
+}
+.commentFrist_imgThree{
+  width: 36rpx;
+  height: 36rpx;
+  position:absolute;
+  bottom:10rpx;
+}
+.commentFrist_sec{
+  width:36rpx;
+  height:36rpx;
+  position:absolute;
+  bottom:10rpx;
+  right:20rpx;
+}
+.usersex{
+  width: 28rpx;
+  height: 28rpx;
+  margin-left: 15rpx;
+  float:left;
+}
+.usersex2{
+  width: 28rpx;
+  height: 28rpx;
+  margin-left: 15rpx;
+  margin-top:-5rpx;
+  float:left;
+}
+.usersex2 image{
+  width: 100%;
+  height: 100%;
+}
+.usersex image{
+  width: 100%;
+  height: 100%;
+}
+.usersex1{
+  width:28rpx;
+  height:28rpx;
+  float:right;
+  margin-top:15rpx;
+  margin-right:10rpx;
+}
+.usersex1 image{
+  width: 100%;
+  height: 100%;
+}
+/*  顶部  */
+.time{
+  height: 50rpx;
+  background: #d4d4d4;
+  color: #ffffff;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 50rpx;
+  display: inline-block;
+  padding-left:10rpx;
+  padding-right:10rpx;
+  border-radius: 10rpx;
+}
+.delpost{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right:10rpx;
+  position: absolute;
+  right: 35rpx;
+  bottom: 0rpx;
+}

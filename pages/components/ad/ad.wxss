@@ -1,0 +1,42 @@
+/* pages/components/ad/ad.wxss */
+/* 广告 */
+.adunit{
+  margin-top: 20rpx;
+  width: 623rpx;
+  border: 10rpx solid #ffffff;
+  position: relative;
+  margin: 0 auto;
+  border-radius:18rpx;
+}
+.adunit::before{
+  position: absolute;
+  left: 6px;
+  top: -24px;
+  content: '';
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid #ffffff;
+  border-left: 10px solid transparent;
+  border-right:10px solid transparent;
+  z-index: 2;
+}
+.adtitle{
+  display:inline-block;
+  font-size:28rpx;
+  margin-left:20rpx;
+  position:relative;
+  top:-48rpx;
+  color:#BBBABA;
+}
+.adimage{
+  width:82rpx;
+  height:82rpx;
+  padding-left: 16rpx;
+  margin-bottom: 20rpx;
+}
+.adavater{
+  width: 28rpx;
+  height: 28rpx;
+  margin-left:10rpx;
+  position:relative;
+  top:-45rpx;
+}

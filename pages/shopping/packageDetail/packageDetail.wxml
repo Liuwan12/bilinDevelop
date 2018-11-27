@@ -1,0 +1,4 @@
+<!-- 套餐详情页 -->
+<view class='imgDetail'>
+  <image src='{{imgSrc}}' class='detail'></image>
+</view>

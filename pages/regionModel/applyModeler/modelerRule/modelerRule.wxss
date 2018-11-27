@@ -1,0 +1,32 @@
+.container{
+  width: 100%;
+  height: 1334rpx;
+  background: #F7F7F7;
+}
+.text_container{
+  width: 660rpx;
+  height: 629rpx;
+  margin-left: 30rpx;
+}
+.one{
+  font-size: 36rpx;
+  font-weight: 600;
+}
+.two{
+  font-size: 30rpx;
+}
+.three{
+  font-size: 30rpx;
+}
+.four{
+  font-size: 30rpx;
+}
+.five{
+  font-size: 30rpx;
+}
+.six{
+  font-size: 30rpx;
+}
+.seven{
+  font-size: 30rpx;
+}

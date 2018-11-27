@@ -1,0 +1,33 @@
+
+<!-- <text>拼团</text> -->
+<view>
+  <view style='margin-left:10rpx;'>5(所有付款累计)人正在拼团</view>
+  <view>
+      <view class='index'>1</view>
+      <view class='avater'>
+        <image></image>
+      </view>
+      <view class='username'>刘婉</view>
+      <view class='usersex'>
+        <image></image>
+      </view>
+      <view class='content'>
+        <view>
+          <view style='width:90%;'>
+            <view class='take' style='margin-left:{{data1}}%'>0(单位)</view>
+            <view class='quan1' style='left:{{data1}}%;'></view>
+          </view>
+          <progress percent="{{data1}}" class='pro' activeColor="yellow" stroke-width="3"/>
+          <view class='quan2'></view>
+          <view class='maxprice'>1000(单位)</view>
+        </view>
+        <view wx:if="{{!hasjoin}}">还差10(单位)成团</view>
+        <view wx:if="{{!hasjoin}}">剩余23:49:10</view>
+        <view wx:if="{{hasjoin}}">已成团</view>
+        <view class='con_btn' bindtap='ToJoin'>去拼单</view>
+        <view style='display:inline-block;'>
+          <button data-id="shareBtn" open-type="share" class='con_btn' data-index="2">分享</button>
+        </view>
+      </view>
+  </view>
+</view>

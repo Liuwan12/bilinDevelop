@@ -1,0 +1,38 @@
+<view class='headline'>同类信息</view>
+<view class="similar_con" wx:for="{{similarList}}" wx:for-index="idx" id="{{idx}}">
+  <view class="sim_info">
+    <view class='sim_touxiang' bindtap='toUserDetail' id="{{idx}}">
+      <image src='{{item.avater}}'></image>
+    </view>
+    <view>
+      <view class='sim_nickName' bindtap='toUserDetail' id="{{idx}}">{{item.nickName}}</view>
+      <view class='sim_usersex' bindtap='toUserDetail' id="{{idx}}">
+        <image src='{{item.sex}}'></image>
+      </view>
+    </view>
+    <view class='sim_content {{item.hassimredPaper!==true?"orange":""}}' bindtap='toInfoModel' id="{{idx}}">
+      <view class='sim_title'>
+        <text>{{list[item.flag-1].name}}:{{item.title}}</text>
+      </view>
+      <view>
+        <text class='price'>¥{{item.newPrice}}</text>
+        <text class='price'>¥{{item.oldPrice}}</text>
+      </view>
+    
+      <view class='info_bottom'>
+        <view class='sim_location'>{{item.plateName}}</view>
+        <view class='wrapper_class'>
+          <view class="sim_appointent" wx:for="{{item.setClassNames}}" wx:key="index" data-key='{{index}}'>
+          <view class='data_name'>{{item}}</view>
+          </view>
+        </view>
+      </view> 
+      <view class='sim_redpaper'>
+        <image src='/image/smallmodel/hasredpaper.png'></image>
+        <!-- <image src='/image/smallmodel/nored.png' wx:if="{{item.hassimredPaper==true}}"></image> -->
+      </view>
+    </view> 
+    <!-- 广告 -->
+    <acd wx:if="{{item.showad}}" tid="{{list[item.flag-1].unitid}}"></acd>     
+  </view>
+</view>

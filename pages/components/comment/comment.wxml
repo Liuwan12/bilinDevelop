@@ -1,0 +1,55 @@
+<!-- 评论  -->
+<view class="comment_box">
+  <view class="commentInfo" wx:for="{{replayArr}}" wx:key="i" wx:for-index="i" bindtap='inputDisplay'>
+    <view class='commentSection'>
+      <view style='text-align:center;margin-top:20rpx;'>
+        <view class="time">{{item.reply.publicTime}}</view>
+      </view>
+      <view class="commentFrist" wx:if="{{!item.reply.deleteShow}}">
+        <image class="commentFrist_imgOne" src='{{replayArr[i].reply.posterAvatar}}' id="{{i}}" bindtap='toHisInfo'>
+        </image>
+        <view class='comment1'>
+          <text class="commentFrist_name">{{replayArr[i].reply.posterName}}</text>
+          <view class='usersex2'>
+              <image src='{{replayArr[i].reply.sex}}'></image>
+          </view>
+        </view>
+        <view class="commentFrist_content his">@{{posterName}}:{{item.reply.content}}
+          <view class='delpost' catchtap='commentOfDelete' id='{{i}}'>
+          <image class="commentFrist_imgThree" src='/image/smallmodel/shanchu.png' wx:if="{{item.reply.deleteShow || userIsPoster}}"></image> 
+          </view>
+           <image class="commentFrist_imgTwo" src='/image/pinglunL@2x.png' catchtap='commentOfComment' id='{{i}}' wx:if="{{userIsPoster}}"></image>
+        </view>
+      </view>
+     <!-- 自己发的 -->
+      <view class="commentFrist" wx:if="{{item.reply.deleteShow}}">
+        <image class="commentFrist_imgOne1" src='{{replayArr[i].reply.posterAvatar}}' id="{{i}}">
+        </image>
+        <view class='comment2'>
+          <text class="commentFrist_name">{{replayArr[i].reply.posterName}}</text>
+        </view>
+        <view class='usersex1'>
+            <image src='{{replayArr[i].reply.sex}}'></image>
+        </view>
+        <view class="commentFrist_content1">@{{posterName}}:{{item.reply.content}}
+          <image class="commentFrist_imgTwo" src='/image/pinglunL@2x.png' catchtap='commentOfComment' id='{{idd}}' wx:if="{{userIsPoster}}"></image>
+          <view class='delpost' catchtap='commentOfDelete' id='{{i}}'>
+            <image class="commentFrist_imgThree" src='/image/smallmodel/shanchu.png' wx:if="{{item.reply.deleteShow || userIsPoster}}"></image> 
+          </view>
+        </view>
+      </view>
+      <view class="commentSecond" wx:for="{{replayArr[i].childReplys}}" wx:key="key" wx:for-index="idx" id="{{idx}}">
+        <image class="commentSecond_imgOne" src='{{replayArr[i].childReplys[idx].posterAvatar}}' bindtap='toHisInfoSec' id='{{idx}}' data-current = "{{i}}">
+        </image>
+        <view class="commentSecond_name">{{item.posterName}}</view>
+         <view class='usersex2'>
+              <image src="{{replayArr[i].childReplys[idx].sex===0?'https://lbs-img.oss-cn-shanghai.aliyuncs.com/img/20180129/179ecff0-947f-4103-9b86-ebf256d4fb3f.jpg':'https://fy-img.oss-cn-shanghai.aliyuncs.com/img/20180227/a94e640c-f05a-4ab4-9cda-70daf079c0e9.jpg'}}"></image>
+          </view>
+        <view class="commentSecond_content">
+        @{{replayArr[i].reply.posterName}}:{{item.content}}
+          <image class="commentFrist_sec" src='/image/smallmodel/shanchu.png' catchtap='commentDelete' id='{{idx}}' wx:if="{{replayArr[i].childReplys[idx].deleteShow}}" data-current = "{{i}}"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

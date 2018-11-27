@@ -1,0 +1,28 @@
+<view class='classChoose' wx:if="{{onclass}}">
+  <scroll-view class='left' style='height:1200rpx;' scroll-y>
+      <view class='one' wx:for="{{oneList}}" wx:key="key" catchtap='onactive' data-current="{{index}}">
+        <text class='lef_txt {{Currentactive==index?"active":""}}'>{{item.name}}</text>
+    </view>
+  </scroll-view>
+    <scroll-view style='height:1200rpx;' scroll-y class='right'>
+      <view class='two' wx:key="key">
+       <view class='rig_txt {{twoactive==index?"active":""}}' data-current="{{index}}" catchtap='twoactive'  wx:for="{{twoList}}">{{twoList[index].name}}</view>
+     </view>
+    </scroll-view>
+    <scroll-view class='four' scroll-y style='height:1200rpx;'>
+        <view class='content' wx:for="{{threeList}}" wx:key="key" data-current="{{index}}" catchtap='threeactive'>
+          <text class='{{threeactive==index?"active2":""}}'>{{threeList[index].name}}</text>
+        </view>
+  </scroll-view>
+</view>
+<view class="pop-para" wx:if="{{onpop}}">
+    <scroll-view class="required" scroll-y style='height:1100rpx;'>
+      <view wx:for="{{arr1}}" wx:for-item="i"  wx:key="key" wx:for-index="i">
+        <view>{{arr1[i].group}}</view>
+        <view wx:for="{{arr1[i].params}}" wx:for-item="idx"  wx:key="key" wx:for-index="idx" class='arrItem {{idx==current1[i]?"active1":""}}' id="{{idx}}" catchtap='oneActive1' data-current="{{i}}">
+            {{arr1[i].params[idx]}}
+        </view>
+      </view>
+    </scroll-view>
+    <view class='bottom' bindtap='overchoose'>选好了</view>
+</view>

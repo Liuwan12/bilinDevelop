@@ -1,0 +1,8 @@
+<view style='margin-top:30rpx;'>
+    <image src='/image/smallmodel/taobilin.png' class='adimage'></image>
+    <view class='adtitle'>淘比邻</view>
+    <image src='https://fy-img.oss-cn-shanghai.aliyuncs.com/img/20180227/a94e640c-f05a-4ab4-9cda-70daf079c0e9.jpg' class='adavater'></image>
+    <view class='adunit'>
+      <ad unit-id="{{tid}}"></ad>
+    </view>
+</view>

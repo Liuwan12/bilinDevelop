@@ -1,0 +1,33 @@
+.myFollowModel_info{
+  position: relative;
+  width: 100%;
+  height: 90rpx;
+  border-bottom: 1px solid #D3D3D3;
+}
+.myFollowModel_info text{
+  font-size: 28rpx;
+  line-height: 90rpx;
+  margin-left: 50rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  width: 530rpx;
+  display: inline-block;
+}
+.giveup_follow{
+  position: absolute;
+  width: 116rpx;
+  height: 40rpx;
+  border: 1px solid #FF5555;
+  border-radius: 8rpx;
+  font-size: 26rpx;
+  color: #FF5555;
+  line-height: 40rpx;
+  text-align: center;
+  top: 25rpx;
+  right: 53rpx;
+}
+.nofocusplate{
+  margin: 400rpx 20rpx;
+  text-align: center;
+}

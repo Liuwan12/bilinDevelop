@@ -1,0 +1,76 @@
+page{
+  font-size: 30rpx;
+}
+.moren{
+  height:40rpx;
+  border:1rpx solid #2b2b2b;
+  background:#ffffff;
+  padding-left:10rpx;
+  padding-right:10rpx;
+}
+.add_detail{
+  width:580rpx;
+}
+.addtop{
+  width:100%;
+  margin-top: 20rpx;
+}
+.add_left{
+  display: inline-block;
+  margin-left: 30rpx;
+}
+.line{
+  width:2rpx;
+  height:90rpx;
+  background:#bebebe;
+  float:right;
+  margin-right:20rpx;
+}
+.add_right{
+  float: right;
+  margin-right:30rpx;
+  line-height:90rpx;
+}
+.middle{
+  width: 90%;
+  margin: 0 auto;
+}
+.mid_item{
+  border-bottom: 1rpx solid rgb(190,190,190);
+  height: 90rpx;
+  line-height: 90rpx;
+}
+.middleitem{
+  display: inline-block;
+}
+.mid_inp{
+  margin-left:10rpx;
+  position:relative;
+  top:20rpx;
+  border:1rpx solid #bebebe;
+  float:right;
+  margin-right:20rpx;
+}
+.youarrow{
+  float: right;
+  padding-right:20rpx;
+}
+.youarrow image{
+  width: 30rpx;
+  height: 30rpx;
+}
+.choose{
+  float: right;
+}
+/* 地址选项 */
+.address{
+  width:200rpx;
+  height:80rpx;
+  background-color:#ffffff;
+  text-align:center;
+  line-height:80rpx;
+  margin:0 auto;
+  margin-top:20rpx;
+  border-radius: 20rpx;
+  border:1rpx solid #e4e4e4;
+}

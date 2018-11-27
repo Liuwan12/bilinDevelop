@@ -1,0 +1,15 @@
+<view class="container"> 
+  <view class="personal_ID">
+     <text class="personal_ID_text">昵称： {{myName}}</text>
+  </view>
+
+  <view class="personal_sex">
+    <text class="personal_sex_text">性别： {{mySex}}</text>
+  </view>
+</view>
+
+<navigator url='/pages/myself/personalInfo/userAgreement/userAgreement'>
+  <view class="user_agreement">
+    淘比邻平台用户服务协议
+  </view>
+</navigator>

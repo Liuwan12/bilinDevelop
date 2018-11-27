@@ -1,0 +1,6 @@
+{
+      "usingComponents": {
+        "fourmList": "/pages/components/fourmList/fourmList",
+        "acd": "/pages/components/ad/ad"
+      }
+}

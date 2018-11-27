@@ -1,0 +1,275 @@
+<button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class="getUserInfo" wx:if="{{getuser}}"></button>
+<view class="body">
+    <view style='text-align:center;'>
+      <view class='time'>{{infoArr.createTime}}</view>
+    </view>
+    <!-- 头部 -->
+    <view class="body_top_info">
+      <view class='touxiang' bindtap='toHeInfo'>
+        <image src='{{infoArr.avater}}'></image>
+      </view>
+      <view class='userinfo'>
+        <text class='nickName' bindtap='toHeInfo'>{{infoArr.nickName}}</text>
+        <view class='usersex'>
+          <image src='{{infoArr.sex}}'></image>
+        </view>
+        <view class='xqbottom'>
+          <button open-type='share' class='shareButton' data-index="1">
+            <view class='shareBackView'>
+              <image src='/image/smallmodel/fenxiang.png'></image>
+              <!-- <text>转发</text> -->
+            </view>
+          </button>
+          <form bindsubmit="submit" report-submit='true' class='toolBarOneView' wx:if="{{!userIsPoster}}">
+            <button formType="submit" bindtap='showBottomInputBar' class='send_message'>
+            <image src='/image/smallmodel/liuyan.png' style='position:relative;top:-8rpx;'></image>
+            <!-- <text>留言</text> -->
+            </button>
+          </form>
+          <view class='toolBarOneView' catchtap='getCollection' wx:if="{{!userIsPoster}}">
+            <image src='/image/smallmodel/shoucang.png'></image>
+            <!-- <text wx:if="{{NoSc}}">收藏</text>
+            <text wx:if="{{Sc}}">已收藏</text> -->
+          </view>
+          <view bindtap='phonePoster' wx:if="{{!userIsPoster && !infoArr.isDeal}}" class='call_seller'>
+              <image src='/image/smallmodel/dianhua.png'></image>
+          </view>
+          <view class='toolBarOneView' catchtap='deletePoster' wx:if="{{userIsPoster}}">
+            <image src='/image/smallmodel/shanchu.png'></image>
+            <!-- <text>删除</text> -->
+          </view>
+        </view>
+      </view>
+      <!-- 中间 -->
+      <view class='info_middle'>
+        <view class='title' wx:if="{{infoArr.flag==1}}">
+          <text>闲置:{{infoArr.title}}</text>
+        </view>
+        <view class='title' wx:if="{{infoArr.flag==2}}">
+          <text>租房:{{infoArr.title}}</text>
+        </view>
+        <view class='title' wx:if="{{infoArr.flag==3}}">
+          <text>求助:{{infoArr.title}}</text>
+        </view>
+        <view class='title' wx:if="{{infoArr.flag==4}}">
+          <text>拼团:{{infoArr.title}}</text>
+        </view>
+        <view class='showhongbao' bindtap='chooseRed'>
+          <image src='/image/smallmodel/hasredpaper.png'></image>
+        </view>
+        <view class="redword {{redpaperTime?'redr2':''}} {{redpacket&&!redpaperTime?'redr':''}} {{!redpacket?'redr3':''}}">
+          <text  wx:if="{{redpaperTime}}">{{countTime}}秒倒计时</text>
+          <text  wx:if="{{redpacket&&!redpaperTime}}">剩余: {{redpacket.remainnumber}}个共{{redpacket.money}}元</text>
+          <text  wx:if="{{!redpacket}}">发起红包接龙</text>
+        </view>
+        <view class='content' wx:if="{{infoArr.content}}">
+            <text selectable='true'>{{infoArr.content}}</text> 
+        </view>
+          <!-- 显示图片 -->
+        <view style='position:relative'>
+          <scroll-view scroll-x class='scrollImage'>
+            <view class="body_center" wx:for="{{imgs}}" wx:key="key" wx:for-item="image" wx:for-index="num"> 
+              <image src='{{image}}' mode="aspectFill" class="center_image_one"  data-src="{{image}}" catchtap='previewImage'>
+              </image>
+            </view>
+            <video  wx:if="{{infoArr.videos}}" mode="aspectFill" class="center_image_one {{addInput1==1?'add_input1':''}}" src="{{infoArr.videos}}" controls bindtap='playPause' id='myvideo'>
+              <cover-view id='myvideo' bindtap='playPause' wx:if="{{showvideo}}" mode="widthFix" class='coverImage'>            
+                  <cover-image  src="/image/bofang.png" class='bofang'></cover-image>
+              </cover-view>
+            </video>
+          </scroll-view>
+          <view class='scroll' wx:if="{{threeImage}}">
+            <image src='/image/smallmodel/scroll.png'></image>
+          </view>
+        </view>
+        <view class='dealprice'>
+          <view class='body_price' wx:if="{{infoArr.flag==1}}">
+            <text class='.info_np'>转让价</text>
+            <text class='.info_nowPrice'>¥{{infoArr.newPrice}}</text>
+            <text class='.info_op'>原价</text>
+            <text class='.info_oldPrice'>¥{{infoArr.oldPrice}}</text>
+          </view>
+          <view class='body_price' wx:if="{{infoArr.flag==2}}">
+            <text class='.info_np'>租金</text>
+            <text class='.info_nowPrice'>¥{{infoArr.oldPrice}}</text>
+          </view>
+        </view>
+      
+        <view class="appointent-date-div" wx:for="{{classDatas}}" wx:key="index" data-key='{{index}}' wx:if="{{classDatas}}">
+            <view class="flex-item">
+              <view class='data_name'>{{item}}</view>
+            </view>
+        </view>
+        <!-- <view class='bargin_cond'>砍价条件: 24小时内砍满100刀 优惠券有效期: 获券后72小时内使用有效</view> -->
+        <view wx:if="{{infoArr.linkUrl}}">
+          <view class='body_linkTitle'>
+            <view>链接地址(一键复制)</view>
+          </view>
+          <text bindtap="copyTBL" class='link-data-div'>{{infoArr.linkUrl}}        </text>
+        </view>
+        <view style='margin-left:12rpx;'>
+          <image src='/image/dingwei@2x.png' class='dingwei'></image>
+          <view class='location'>{{infoArr.plateName}}</view>
+          <view class='distance' wx:if="{{distance}}">{{distance}}Km</view>       
+        </view>
+        <view class='plateQQ' bindtap='toplateDetail' wx:if="{{infoArr.plateQQName}}">
+          <image class='plateqqimage' src='/image/dingwei.png'></image>
+          <text class='plateQQName'>{{infoArr.plateQQName}} </text>
+          <text class='plateQQAddress'>{{infoArr.plateQQAddress}}</text>
+        </view>
+        
+        <!-- 红包 -->
+          <view class="red_paper" wx:if="{{redjiePackets}}">
+            <view wx:for="{{redjiePackets}}" wx:for-item="i"  wx:key="key" wx:for-index="i">
+              <view class='redpackage'>
+                <text class='redmoney'>{{i+1}}.</text>
+                <image src='{{redjiePackets[i].myWechat.avatar}}' bindtap='toRedHisInfo' data-name="{{redjiePackets[i].myWechat.openId}}"></image>
+                <image src='/image/smallmodel/hasredpaper.png'></image>
+                <view class='redmoney'>{{redjiePackets[i].number}}个共{{redjiePackets[i].money}}元:</view>
+                <image wx:for="{{redjiePackets[i].redGrabpackets}}" wx:key="idx" id="{{idx}}" data-current="{{i}}"wx:for-index="idx" src='{{redjiePackets[i].redGrabpackets[idx].myWechat.avatar}}' data-name="{{item.openid}}" bindtap='toRedHisInfo'></image>
+              </view>
+            </view>
+          </view>
+        <!-- 设置成功 -->
+          <view class="nodeal comment_toolBarOne_contact" bindtap='dealPoster' wx:if="{{infoArr.flag==1&&userIsPoster && !infoArr.isDeal}}">设置为已成交</view>
+          <view class="deal comment_toolBarOne_contact" wx:if="{{infoArr.flag==1 && infoArr.isDeal}}" bindtap='isdeal'>已成交</view>
+          <view class="nodeal comment_toolBarOne_contact" bindtap='dealPoster' wx:if="{{infoArr.flag==2 && userIsPoster && !infoArr.isDeal}}">设置为已租赁</view>
+          <view class="deal comment_toolBarOne_contact" wx:if="{{infoArr.flag==2 && infoArr.isDeal}}" bindtap='isdeal'>已租赁</view>
+          <view class="nodeal comment_toolBarOne_contact" bindtap='dealPoster' wx:if="{{infoArr.flag==3 && userIsPoster && !infoArr.isDeal}}">待解决</view>
+          <view class="deal comment_toolBarOne_contact" wx:if="{{infoArr.flag==3 && infoArr.isDeal}}" bindtap='isdeal'>已解决</view>
+          <view class="nodeal comment_toolBarOne_contact" bindtap='dealPoster' wx:if="{{infoArr.flag==4 && userIsPoster && infoArr.pastDue}}">设置为已成团状态</view>
+          <view class="deal comment_toolBarOne_contact" wx:if="{{infoArr.flag==4 && !infoArr.pastDue}}" bindtap='pastDue'>已成团</view>
+          <view class='info_browse'>
+            <view>有{{infoArr.lookNum}}人看过</view> 
+          </view>
+      </view>
+    </view>
+    <infoBargin wx:if="{{infoArr.flag==5}}"></infoBargin>
+    <infoTeam wx:if="{{infoArr.flag==4}}"></infoTeam>
+    <view style='margin-top:20rpx;'>
+      <image src='/image/smallmodel/taobilin.png' class='adimage'></image>
+      <view class='adtitle'>淘比邻</view>
+      <image src='https://lbs-img.oss-cn-shanghai.aliyuncs.com/img/20180129/179ecff0-947f-4103-9b86-ebf256d4fb3f.jpg' class='adavater'></image>
+      <view wx:if="{{tieziFlag==1}}" class='adunit'>
+        <ad unit-id="adunit-edac615734196277"></ad>
+      </view>
+      <view wx:if="{{tieziFlag==2}}" class='adunit'>
+        <ad unit-id="adunit-0e25cd0cdd6e014c"></ad>
+      </view>
+      <view wx:if="{{tieziFlag==3}}" class='adunit'>
+        <ad unit-id="adunit-67e49b2c9f8dd72c"></ad>
+      </view>
+      <view wx:if="{{tieziFlag==4}}" class='adunit'>
+        <ad unit-id="adunit-b658d3a4503b3bb2"></ad> 
+      </view>
+    </view>
+    <!-- 评论  -->
+   <comments replayArr="{{replayArr}}" posterName="{{posterName}}" bind:comment="comment"></comments>
+  <view class='shade' wx:if="{{showInputBar}}" bindtap='inputDisplay'></view>
+  <view class='comment_inputBar' wx:if="{{showInputBar}}">
+      <view class='comment_inputBar_topView'>
+        <image src='{{infoArr.avater}}'></image>
+        <input placeholder='更多细节问问发布人' bindinput='bindInputLVOne' value='{{LVOneValue}}' class='input2' auto-focus="true"></input>
+        <view class='comment_inputBar_topView_sendView'>
+          <view bindtap='releaseLVOne'>发送</view>
+        </view>
+      </view>
+      <view class='comment_inputBar_commonMsgView' bindtap='common_msg_one'>
+        <text>{{commonMsgs[0].content}}</text>
+      </view>
+      <view class='comment_inputBar_commonMsgView' bindtap='common_msg_two'>
+        <text>{{commonMsgs[1].content}}</text>
+      </view>
+      <view class='comment_inputBar_commonMsgView' bindtap='common_msg_three'>
+        <text>{{commonMsgs[2].content}}</text>
+      </view>
+      <view class='comment_inputBar_commonMsgView' bindtap='common_msg_four'>
+        <text>{{commonMsgs[3].content}}</text>
+      </view>
+      <view class='comment_inputBar_commonMsgView' bindtap='common_msg_five'>
+        <text>{{commonMsgs[4].content}}</text>
+      </view>
+  </view>
+  <view class='comment_inputBar_toOther' wx:if="{{hideInputBar}}">
+    <view class='comment_inputBar_topView'>
+      <image src='{{infoArr.avater}}'></image>
+      <view class='speaker'>
+        <text class='speak'>@{{replyNickName}}:</text>
+        <input bindinput='bindInputLVOne' value='{{LVOneValue}}' focus='true' class='input1'>
+        </input>
+      </view>
+      <view class='comment_inputBar_topView_sendView' bindtap='releaseLVOne'>发送</view>
+    </view>
+  </view>
+  <view class='popBGView' wx:if="{{showPopBG}}" bindtap='hidePop'></view>
+  <similarList class='similar' wx:if="{{hasSimilar}}" similarList="{{similarList}}">
+  </similarList>
+</view>
+ <!-- 返回首页 -->
+<view class='toindex' bindtap='toIndex'>
+    <view class='index'>返回</view>
+    <view class='index2'>首页</view>
+</view>
+<!-- 拼团砍价 -->
+<view class='pay_bottom' wx:if="{{infoArr.flag==4||infoArr.flag==5}}">
+  <view class='toBuyTeam' wx:if="{{infoArr.flag==4}}" bindtap='toBuyTeam'>
+      <view>¥12.00</view>
+      <view bindtap='toPay'>发起拼团</view>
+  </view>
+  <view class='toBuyOne' wx:if="{{infoArr.flag==4}}" bindtap='toBuyOne'>
+      <view>¥12.00</view>
+      <view bindtap='toPay'>单买</view>
+  </view>
+  <view class='paybtn' wx:if="{{infoArr.flag==5}}" bindtap='toBargin' style='line-height:90rpx;'>
+      发起砍价
+  </view>
+</view>
+<!-- 塞红包页面 -->
+<view class='redShade' wx:if="{{showRedPaper||showRedDeal}}"></view>
+<view class='redpaper' wx:if="{{showRedPaper}}">
+  <view class='red_title'>
+    发起红包接龙，更有利于与邻居交易和求助成功
+  </view>
+  <view class='red_error'>
+  {{redErrorText}}
+  </view>
+  <image src='/image/cuowuTwo@2x.png' class='cancel_redpaper' bindtap='cancelPedpaper'></image>
+  <view class='redpaper_num'>
+    <image src='/image/smallmodel/redpaper.png' class='img_redpaper'></image>
+    <view class='red_num'>本次红包接龙总金额</view>
+    <view class='red_time'>
+      <input placeholder='0.0' class='red_input' style='width:260rpx;' bindinput='inputRed' data-name="money" type='digit'  value='{{moneyVal}}'></input>
+      元
+    </view>
+  </view>
+  <text class='red_warn'>每个人抢到的红包随机,最低0.30元，最高99%总金额</text>
+  <view class='redpaper_num'>
+    <view class='red_num'>红包接龙总个数</view>
+    <view class='red_time'>
+      <input placeholder='填写个数' class='red_input' bindinput='inputRed' data-name="num" type='number' value='{{numVal}}'></input>个
+    </view>
+  </view>
+  <!-- <view class='time_warn'>
+   <text class='time_warn_l'>拆红包时长</text>
+   <text class='time_warn_r'>10秒</text>
+   </view> -->
+  <!-- <view class='redpaper_num'>
+    <view class='red_num'>拆红包接龙前时长设置</view>
+    <view class='red_time'>
+        <input placeholder='不超过60' class='red_input' bindinput='redTime' type='number'></input>秒
+    </view>
+  </view> -->
+  <view class='Fir_money'>¥{{moneyVals}}</view>
+  <button class='money_tored' bindtap='FillMoney'>塞钱进接龙</button>
+</view>
+<view wx:if="{{showRedDeal}}" class='showRedpaper'>
+    <image src='/image/cuowuTwo@2x.png' class='showRedcancel' bindtap='LootRedcancel'></image>
+    <view class='showRedDeal' bindtap='LootRed'>
+      <image src='/image/smallmodel/redpaper.png'></image>
+    </view>
+</view>
+<view>
+  <loading hidden="{{hidden}}" bindchange="loadingChange">
+    加载中...
+  </loading>
+</view>

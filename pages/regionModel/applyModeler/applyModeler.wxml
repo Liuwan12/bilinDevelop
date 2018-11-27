@@ -1,0 +1,144 @@
+<view class="applyModeler_container" bindtap='everyBtn'>
+  <view class="appler_info">
+    <image src='/image/applyModeler/sq_iocn_jb@2x.png'></image>
+    <text class="appler_info_text">基本信息认证</text>
+  </view>
+
+  <view class="apply_info_box">
+    <view class="info_email">
+      <text class="asterisk">*</text>
+      <text class="binding_email">邮箱:</text>
+      <input type='text' bindinput='emailValue' placeholder='请输入您的常用邮箱'  maxlength="30" placeholder-style='font-size:28rpx; color:#cdced0;'>
+      </input>
+    </view>
+    <view class="info_email">
+      <text class="asterisk">*</text>
+      <text class="binding_email">联系地址:</text>
+      <input type='text' bindinput='placeValue' placeholder='请输入您的常用地址' placeholder-style='font-size:28rpx; color:#cdced0;' maxlength="30">
+      </input>
+    </view>
+  </view>
+
+  <view class="appler_info">
+    <image src='/image/applyModeler/sq_icon_sfxx@2x.png'></image>
+    <text class="appler_info_text">身份信息认证</text>
+  </view>
+
+  <view class="true_info_box">
+    <view class="info_idCard">
+      <text class="asterisk">*</text>
+      <text class="binding_phone">证件类型:</text>
+      <text class="idcard_class" catchtap='beginPaperChoose'>{{idCardClass}}</text>
+      <image src='/image/applyModeler/sq_btn_back@3x.png'></image>
+    </view>
+
+    <view class="info_trueName">
+      <text class="asterisk">*</text>
+      <text class="binding_phone">真实姓名:</text>
+      <input type='text' bindinput='trueNameValue' placeholder='填写证件上的姓名' placeholder-style='font-size:28rpx; color:#cdced0;'>
+      </input>
+    </view>
+
+    <view class="info_idNum">
+      <text class="asterisk">*</text>
+      <text class="binding_phone">证件号:</text>
+      <input type='text' bindinput='idNumValue' placeholder='填写证件上的号码' placeholder-style='font-size:28rpx; color:#cdced0;'>
+      </input>
+    </view>
+    
+    <view class="info_idCardPic">
+      <text class="asterisk">*</text>
+      <text class="binding_WXname">手持身份证正面照:</text>
+
+      <view  class="id_pic"  wx:if="{{imgisShow}}">
+        <image src='{{imglist}}'  mode="aspectFill" data-src="{{imglist}}" bindtap="previewImage"></image>
+      </view>
+
+      <view class="choose_pic" wx:if="{{chooseShow}}">
+        <text class="chooose_pic_textOne">选择照片请上传真实照片</text>
+        <image src='/image/choosephoto@2x.png' class="choose_pic_imgOne" bindtap='uploadIdCardPic'>
+        </image>
+        <view class="chooose_pic_textTwo">
+        请参考示意图拍摄证件，照片信息必须清晰可见，大小不超过3M，仅支持jpg或png格式
+        </view>
+        <image src='/image/applyModeler/sq_img1@2x.png' class="choose_pic_imgTwo"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="appler_info">
+    <image src='/image/applyModeler/sq_icon_qt@2x.png'></image>
+    <text class="appler_info_text">其他信息认证（选填）</text>
+  </view>
+
+  <view class="other_info_box">
+    <view class="info_workPic">
+      <text class="asterisk">*</text>
+      <text class="binding_WXname">工作证照片:</text>
+
+      <view  class="id_pic"  wx:if="{{workimgisShow}}">
+        <image src='{{workimglist}}'  mode="aspectFill" data-src="{{workimglist}}" bindtap="previewWorkImage"></image>
+      </view>
+
+      <view class="choose_pic" wx:if="{{chooseWorkShow}}">
+        <text class="chooose_pic_textOne">选择照片请上传真实照片</text>
+        <image src='/image/choosephoto@2x.png' class="choose_pic_imgOne" bindtap='uploadWorkPic'>
+        </image>
+        <view class="chooose_pic_textTwo">
+        请根据各子板块性质上传产权证明或学生证或工作证等能够证明自己符合任职版主的证明
+        </view>
+        <image src='/image/applyModeler/sq_img2@2x.png' class="choose_pic_imgTwo"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="appler_info">
+    <image src='/image/applyModeler/iphone@2x.png'></image>
+    <text class="appler_info_text">手机号认证</text>
+  </view>
+
+  <view class="apply_info_box">
+    <view class="bindphone">
+      <text class="aster_phone">*</text>
+      <text class="phone_num">手机号:</text>
+      <input type='text' bindinput='phoneValue' placeholder='请输入正确的11位手机号'  maxlength="11" placeholder-style='font-size:28rpx; color:#cdced0;' class='phone_input'>
+      </input>
+      <button class='phonebtn' bindtap='getVerificationCode' wx:if="{{verification}}">获取验证码</button>
+      <button class='count' wx:if="{{ontime}}">{{time}}s</button>
+    </view>
+    <view class="bindphone">
+      <text class="aster_phone">*</text>
+      <text class="phone_num">短信验证码:</text>
+      <input type='text' bindinput='smsValue' placeholder='请输入短信验证码' placeholder-style='font-size:28rpx; color:#cdced0;' maxlength="6" class='phone_input'>
+      </input>
+      <button class='phonebtn' bindtap='onconfirm'>确认</button>
+    </view>
+  </view>
+
+  <view class="choose_xieyi">
+    <view class="{{xuanze?'yuan1':'yuan2'}}" bindtap='xuanzeBtn'></view>
+    <navigator url='/pages/regionModel/applyModeler/modelerRule/modelerRule'>
+      <text>我已阅读并同意《管理员认证协议》</text>
+    </navigator>
+  </view>
+
+  <view class="identification">
+    <image src='/image/applyModeler/sq_btn_ljrz@2x.png' catchtap='authentication'></image>
+  </view>
+</view>
+
+<!--  证件选择  -->
+<!-- 证件类型选择  -->
+<view class="{{paperClassShow?'paper_class2':'paper_class'}}" wx:if="{{paperClassShow}}">
+  <view class="zhengjian"  wx:for="{{paperlist}}" wx:key="key" wx:for-index="idx"  id="{{idx}}" bindtap='paperChoose'>
+    <text>{{item}}</text>
+  </view> 
+</view>
+
+<!-- 身份选择  -->
+
+<view class="{{personalClassShow?'personal_class2':'personal_class'}}" wx:if="{{personalClassShow}}">
+  <view class="zhengjian"  wx:for="{{personallist}}" wx:key="key" wx:for-index="idx" id="{{idx}}" bindtap='personalChoose'>
+    <text>{{item}}</text>
+  </view> 
+</view>

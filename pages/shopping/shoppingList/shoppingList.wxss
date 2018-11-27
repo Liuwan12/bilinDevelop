@@ -1,0 +1,102 @@
+.header{
+  height: 190rpx;
+  position: relative;
+  border-bottom: 20rpx solid rgb(240, 240, 240);
+  border-top: 1rpx solid #e9e9e9;
+}
+.right{
+  display:inline-block;
+  margin-left:30rpx;
+  margin-top: 28rpx;
+}
+.shopImage{
+  width: 110rpx;
+  height: 110rpx;
+  margin-top: 40rpx;
+  margin-left: 26rpx;
+  float: left;
+}
+.shopImage image{
+  width: 100%;
+  height: 100%;
+}
+.certif{
+  width: 81rpx;
+  height: 37rpx;
+  font-size:20rpx;
+  padding:0;
+  background-color: rgb(134, 223, 182);
+  color: #ffffff;
+  margin-left: 35rpx;
+  display:inline-block;
+  line-height: 37rpx;
+  border-radius: 6rpx;
+}
+.locat{
+  font-size: 22rpx;
+  display: inline-block;
+  background:#ff5555;
+  border-radius:20rpx;
+  padding:7rpx;
+}
+.position{
+  font-size: 24rpx;
+}
+.toshopdetail{
+  float: right;
+  width: 40rpx;
+  height: 40rpx;
+  margin-top:60rpx;
+  margin-right:30rpx;
+}
+.toshopdetail image{
+  width: 100%;
+  height: 100%;
+}
+.certif{
+  width: 81rpx;
+  height: 37rpx;
+  font-size:20rpx;
+  padding:0;
+  background-color: rgb(134, 223, 182);
+  color: #ffffff;
+  margin-left: 35rpx;
+  display:inline-block;
+  line-height: 37rpx;
+  border-radius: 6rpx;
+}
+.Listdetail{
+  height: 257rpx;
+  border-bottom: 1rpx solid rgb(240, 240, 240);
+}
+.detailImage{
+  width: 200rpx;
+  height: 200rpx;
+  background-color: yellow;
+  margin-left:15px;
+  float:left;
+  margin-top:27rpx;
+}
+.detailImage image{
+  width: 100%;
+  height: 100%;
+}
+.list_text{
+  padding-top:23px;
+  display: inline-block;
+  padding-left: 30rpx;
+}
+.title{
+  font-size: 32rpx;
+  margin-bottom: 70rpx;
+}
+.time{
+  display: inline-block;
+  font-size: 28rpx;
+  color: rgb(129, 129, 129);
+}
+.dellist{
+  float: right;
+  color: rgb(255, 40, 40);
+  font-size: 28rpx;
+}

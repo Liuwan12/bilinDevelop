@@ -1,0 +1,49 @@
+/* pages/components/plateCheck/plateCheck.wxss */
+.openreview{
+  z-index:999;
+  position:fixed;
+  left:65rpx;
+  background:#ffffff;
+  width:567rpx;
+  height:650rpx;
+  top: 170rpx;
+}
+.open_txt{
+  padding-top: 91rpx;
+  font-size: 30rpx;
+  color: #353535;
+  text-align: center;
+  display: block;
+}
+.city{
+  font-size: 30rpx;
+  padding-top: 82rpx;
+  text-align: center;
+}
+.open_posi{
+  padding-left: 34rpx;
+  font-size: 30rpx;
+  margin-top: 35rpx;
+}
+.open_inp{
+  display: inline-block;
+  width: 385rpx;
+  padding-left: 14rpx;
+  border-bottom: 1px solid rgb(135, 135, 135)
+}
+.open_inp1{
+  display: inline-block;
+  width: 300rpx;
+  padding-left: 14rpx;
+  border-bottom: 1px solid rgb(135, 135, 135)
+}
+.submit{
+  width: 119rpx;
+  height: 43rpx;
+  background: #ff4400;
+  color: #ffffff;
+  font-size: 30rpx;
+  margin-top: 60rpx;
+  line-height: 43rpx;
+  border-radius: 22rpx;
+}

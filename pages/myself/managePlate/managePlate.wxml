@@ -1,0 +1,5 @@
+<view class="myFollowModel_info" wx:for="{{myFollowArr}}" wx:key="key" wx:for-index="idx" id="{{idx}}">
+  <text>{{myFollowArr[idx].platerApply.plateName}}</text>
+  <view class="giveup_follow" catchtap='cancleFollow' id="{{idx}}">取消管理权限</view>
+</view>
+<view class='Info' wx:if="{{nomanage}}">赶快去你所关注的小区首页去申请成为位置管理员吧❤️</view>

@@ -1,0 +1,48 @@
+.icon{
+  margin-top: 18rpx;
+  width:44rpx;
+  height: 44rpx;
+}
+.tabBar{
+  width:100%;
+  height: 111rpx;
+  position: fixed;
+  bottom:0;
+  background: white;
+  font-size:24rpx;
+  box-shadow: 6rpx 6rpx 6rpx 6rpx #aaa;
+  z-index: 99;
+  display: flex
+}
+.none{
+  background: #ffffff;
+  opacity: 1;
+}
+
+ .tabBar-item{
+  text-align: center;
+  flex: 1;
+}
+/*当前字体颜色*/
+.tabBarText{
+  margin-top: 5rpx;
+}
+.tabBarNoSelText{
+  color: #7F7F7F;
+}
+.tabBarCurrentText{
+  color: #ff4400;
+}
+.midTabBarText{
+  margin-top: 72rpx;
+}
+.midTabBarText text {
+  color: #7F7F7F;
+}
+.midIcon{
+  position:absolute;
+  left:345rpx;
+  top:10rpx;
+  width:55rpx;
+  height:55rpx;
+}

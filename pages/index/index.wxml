@@ -1,0 +1,135 @@
+<import src="../../pages/tabBar/tabBar.wxml"/>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
+<button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class="getUserInfo" wx:if="{{getuser}}"></button>
+<view class="home_page">
+  <view class="headerBar">
+      <view style='display:inline-block;'>
+        <image src='/image/smallmodel/taobilin.png' class='sx_touxiang'></image>
+        <view class="localCity" bindtap='tocitylist'>{{cityname}}</view>
+        <image src='/image/smallmodel/xjiantou.png' class='todetail' bindtap='tocitylist'></image>
+      </view>
+      <view class="search_plate">
+       <view wx:if="{{!showsearch}}" bindtap='tosearch' style='width:560rpx;'>
+          <view class="searchplate">
+            <image src='/image/dingwei@2x.png'></image>
+          </view>
+          <view style='display:inline-block;'>
+            <view  class='weizhi'>{{plateValue}}</view>
+            <image src='/image/smallmodel/xjiantou.png' class='todetail' style='top:8rpx;left:2rpx;'></image>
+          </view>
+       </view>
+        <view class="search" wx:if="{{showsearch}}">
+          <view bindtap='tosearch'>
+              <image src='/image/sousuo@2x.png' class="shuImg2"></image>
+          </view>
+          <input placeholder='请输入社区名称' placeholder-style="font-size:28rpx;" class='sea_inp' bindconfirm="confirm1" focus="true" bindinput='input1'></input>
+          <text class='cancel' bindtap='toweizhi'>取消</text>
+         </view>
+      </view>
+      <view class='plate_pop' wx:if="{{showsearch}}">
+      <!-- 已关注列表 -->
+        <view class='plateCell' wx:for="{{followPlateList}}" wx:for-index="idx" wx:key="key" id="{{idx}}">
+          <view class='iconplate'>
+            <image src='/image/plateIcon@2x.png'></image>
+          </view>
+          <text id="{{idx}}" bindtap='followPlate'>{{followPlateList[idx].plate.title}}</text>
+
+          <view class='nonfocus_plate' data-current = "{{idx}}" bindtap='cancelfollow'>已关注</view>
+        </view>
+        <view class='line'></view>
+        <!-- 附近列表 -->
+        <view class='plateCell' wx:for="plateList" wx:for-index="idx" wx:key="key" id="{{idx}}" >
+          <view bindtap='choosePlate' id="{{idx}}" style='display:inline-block;width:580rpx;'>
+              <view class='iconplate' wx:if="{{plateList[idx]}}">
+                <image src='/image/plateIcon@2x.png'></image>
+              </view>
+              <text wx:if="{{plateList[idx]}}">{{plateList[idx].plate.title}}</text>
+              <view class='distance' wx:if="{{plateList[idx]}}">{{plateList[idx].plate.distance}}km</view>
+              </view>
+              <view class='placeCell_FocusView' bindtap='isFocus' data-current = "{{idx}}" wx:if="{{plateList[idx].onfocus}}">+关注</view>
+              <view class='placeCell_hasFocus' wx:if="{{plateList[idx].nonfocus}}" data-current = "{{idx}}">已关注</view>
+        </view>
+      </view>
+  </view>
+  <!-----  脖子  ----->
+  <view style='height:100%'>
+  <!-- 选项卡 -->
+  	<scroll-view class="tabButtonAll" id="tabButtonAll" scroll-x scroll-with-animation scroll-left="{{line.scrLeft}}">
+		<view class="tabBtn {{index == line.oldActive ? 'active' : ''}}"  wx:for="{{list}}" wx:key="key"  bindtap="lineInfo" id="{{index}}">{{item.name}}</view>
+		<div class="line" style="width:{{line.width}}px;left:{{line.left}}px"></div>
+	</scroll-view>
+    <!-- 滚动 -->
+  <template name="roll">
+    <!-- <block> -->
+      <view class='sx_lunbo'>
+        <image src='/image/smallmodel/taobilin.png' class='sx_touxiang'></image>
+        <text class='red'>社区头条:</text>
+        <image class='sxavater' src='https://lbs-img.oss-cn-shanghai.aliyuncs.com/img/20180129/179ecff0-947f-4103-9b86-ebf256d4fb3f.jpg'></image>
+      </view>
+      <view class='swiper'>
+        <swiper class='sx_swiper' autoplay interval="5000" duration="3000" circular>
+          <swiper-item wx:for="{{noticeListArr}}" wx:key="" catchtap="tonoticeModel" wx:for-index="idx" id="{{idx}}">
+            <view class='reds'>{{item}}</view>
+          </swiper-item>
+        </swiper>
+      </view>
+  </template>
+  <template is="roll" data="{{noticeListArr}}" />
+       <view class='body_wrapper' >
+
+ <swiper style="height: {{clientHeight?clientHeight+230+'rpx':'auto'}}" current="{{line.swipeIndex}}" duration="300" bindchange="swipeChange"> 
+      <!-- 列表 -->
+      
+    <swiper-item wx:for="{{list}}" wx:key="key">
+      	<scroll-view scroll-top="{{scrollTop}}" style="height: {{clientHeight?clientHeight+230+'rpx':'auto'}}"   scroll-x="false" scroll-y="true" bindscrolltolower="onReachBottom"> 
+        <!-- 帖子列表 -->
+     <fourmList listArr="{{listArr}}" pageFlag='index'></fourmList>
+         <!-- 暂无发布内容 -->
+<view class='nopublish' wx:if="{{nopubish}}">
+  <view class='no_release'>
+  在淘比邻，你可以:
+  </view>
+  <view class='no_release'>
+  1.点击<text class='rel_red'>“+”</text>，发布拼团、租房、闲置、求助信息。你附近社区的邻粉均可以在<text class='rel_red'>“首页”</text>看到你的信息；
+  </view>
+  <view class='no_release'>
+  2.点击<text class='rel_red'>“首页”</text>，看到你附近社区的邻粉所发布的所有拼团、租房、闲置、求助信息；
+  </view>
+  <!-- <view class='no_release'>
+  3.点击<text class='rel_red'>“首页”</text>顶部<text class='rel_red'>“>”</text>，关注你的社区，与附近社区的邻粉互动。
+  </view> -->
+</view>
+    </scroll-view>
+    </swiper-item>
+   
+    </swiper> 
+    </view>
+
+</view>
+</view>
+  <view class='Application plate_pop' wx:if="{{showApplication}}">
+     <view class='noplate'>
+       <image src='/image/search/mwz@2x.png'></image>
+     </view>
+     <text class='click'>暂无结果，换个位置试试吧</text>
+     <button class='appli' bindtap='application'>新增地点</button>
+  </view>
+  <!-- 打开审核位置弹框  start-->
+  <plateCheck bind:toApply="toApply" cityname="{{cityname}}" openid="{{getopenid}}" wx:if="{{showreview}}"></plateCheck>
+   <!-- 打开审核位置弹框  end-->
+   
+   
+<view class='mask' wx:if="{{showmask}}">
+  <image src='/image/tabBar/arrow.png' class='mask_arrow'></image>
+  <view class='mask_text'>
+    <view>1.点击“添加到我的小程序”</view>
+    <view style='margin-top:52rpx'>2.下拉微信首页快速进入淘比邻</view>
+  </view>
+  <view class='mask_btn' bindtap='cancelMask'>我知道了</view>
+</view>
+<view class='toTop' bindtap='toTop'>
+    <image src='/image/smallmodel/xjiantou.png' class='topimage'></image>
+    <view class='top2'>顶部</view>
+</view>
+
+

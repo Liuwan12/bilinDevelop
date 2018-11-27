@@ -1,0 +1,113 @@
+<import src="../../pages/tabBar/tabBar.wxml"/>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
+<view class='publish'>
+       <view class='shade' wx:if="{{shade}}"></view>
+        <view class='head'>
+          <text class='head_txt'>我的位置：</text>
+          <scroll-view scroll-x="true" class='myscroll'>
+             <view wx:for="{{plateList}}" wx:key="key" clsss="List" data-id="{{index}}" data-current="0">
+             <button class='platelist {{onactive==index?"active":""}}' bindtap='active'>{{item.title}}</button>
+          </view>
+          </scroll-view>
+        </view>
+        <view class='select'>
+        <text class='select2 {{selectTapCurrent=="1"?"borders":""}}' catchtap='menuTap' data-current="1">邻居直租</text>
+            <text class='{{selectdefault=="0"?"":"selectdefault"}} {{selectTapCurrent=="0"?"borders":""}} select1' catchtap='menuTap' data-current="0">邻居闲置</text>
+            <!-- <text class='select3 {{selectTapCurrent=="2"?"borders":""}}' catchtap='menuTap' data-current="2">邻居直拼</text> -->
+        </view>
+        <view class='addPhoto'>
+         <view class='changepto' bindtap='onaddPhoto'>
+            <view class='{{photo=="0"?"photo":"photos"}}' bindtap='onphoto'>
+            <image src="/image/camnera@2x.png" class='img'></image>
+            <text class='pto_txt'>添加照片</text>
+          </view>
+         </view>
+          <view wx:for="{{pics}}" wx:key="index" class="add_photo" wx:for-index="idx" id="{{idx}}">
+              <view class='picture' wx:if="{{isshowphoto}}">
+                 <image src='{{item}}' class='item' id="{{idx}}"></image>
+              </view>
+              <image class='cuowuxx' src='/image/cuowuTwo@2x.png' id="{{idx}}" bindtap='cuowu'></image>
+          </view>
+        </view>
+        <view class='add'>
+            <view class='add_title'>
+                <text class='content'>添加标题</text>
+                <input class='add_input' maxlength='30' bindinput='titleInput'></input>
+                <text class='num'>30</text>
+            </view>
+            <view class='add_con'>
+                <text class='content'>添加内容</text>
+                <textarea class='add_input' maxlength='150' bindinput='contentInput'></textarea>
+                <text class='num'>150</text>
+            </view>
+        </view>
+
+        <view class='price' wx:if="{{onprice}}">
+          <view class='newPrice'>
+            <text class='pri_sel'>想卖多少钱</text>
+            <image src='/image/cuowuTwo@2x.png' class='cuowu' bindtap='prihide'></image>
+            <view class='pri'>
+                <text>¥</text>
+                <input cursor-spacing='0' type='digit' bindinput='newprice'></input>
+            </view>
+          </view>
+          <view class='oldPrice'>
+            <text>原价</text>
+            <input placeholder='¥0' class='old_pri' type="digit" cursor-spacing='0' bindinput='oldprice'></input>
+          </view>
+        </view>
+
+        <view class='bottom' wx:if="{{bindtrans}}">
+            <view class='bot_class'>
+                <text class='content'>分类及参数</text>
+                <input class='classify' bindtap='onClassify' placeholder-style="color:#A9ADBB" placeholder='请选择二手品分类 >' wx:if="{{class1}}"></input>
+                <text class='classify2' bindtap='onClassify' wx:if="{{class2}}">{{classify}}</text>
+            </view>
+            <view class='bot_pri'>
+                <text class='content'>价格</text>
+                <input class='num' placeholder='开价 >' type="text" bindtap="inputPrice" placeholder-style="color:#A9ADBB" cursor-spacing='0' wx:if="{{class5}}"></input>
+                <text class='num'>{{newPrice}}</text>
+            </view>
+            <view class='bot_title'>
+                <text class='content'>链接</text>
+                <input placeholder='选填：请粘贴商品原购买链接地址' class='num'></input>
+            </view>
+        </view>
+        <view class='bottom' wx:if="{{bindlease}}">
+            <view class='bot_class'>
+                <text class='content'>参数</text>
+                <input class='classify' bindtap='lease' placeholder-style="color:#A9ADBB" placeholder='请选择二手品分类 >' wx:if="{{class3}}"></input>
+                <text class='classify2' bindtap='lease' wx:if="{{class4}}">{{join}}</text>
+            </view>
+            <view class='bot_rent'>
+                <text class='content'>价格</text>
+                <input class='rent' placeholder='请输入月租金 >' type="number" placeholder-style="color:#A9ADBB"></input>
+            </view>
+        </view>
+        <view class='bottom2' wx:if="{{bindjoin}}">
+           <view class='bot_title'>
+                <text class='content'>链接</text>
+                <input placeholder='选填：请粘贴商品原购买链接地址' class='num'></input>
+            </view>
+        </view>
+        <button class='release' bindtap='onrealese'>我要发布</button>
+
+
+
+   <!-- 弹窗 -->
+   <view class='pop' wx:if="{{hideName}}">
+      <text class='pop_txt'>请绑定手机号</text>
+      <image src='/image/cuowuTwo@2x.png' class='cuowu' bindtap='hide'></image>
+      <view class='phone'>
+        <image src='/image/zh_icon_phone@2x.png'></image>
+        <input placeholder='请输入您的手机号' class='phe_inp' type= "number" bindinput='inputPhoneNum' maxlength="11" />
+      </view>
+      <view class='valid'>
+          <image class="val_phe" src='/image/sr_icon_phone@2x.png'></image>
+          <input placeholder='请输入您的手机号验证码' type='number'  bindinput='onverify'></input>
+          <image class='val_val' src='/image/sr_btn_hqyz@2x.png' bindtap='getVerificationCode' wx:if="{{verification}}"></image>
+          <button class='count' wx:if="{{ontime}}">{{time}}s</button>
+      </view>
+      <text class='pop_queren' bindtap='onconfirm'>确认</text>
+   </view>
+</view>

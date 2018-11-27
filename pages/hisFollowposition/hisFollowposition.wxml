@@ -1,0 +1,7 @@
+<acd tid="adunit-5c035e3806a155cd"></acd>
+<view class="myFollowModel_info" wx:for="{{positionList}}" wx:key="key" wx:for-index="idx" id="{{idx}}">
+  <text class='name' id="{{idx}}">{{item.plate.title}}</text>
+  <text class='txt' wx:if="{{item.nofocus}}" bindtap='focus' id="{{idx}}">+关注</text>
+  <text class='txt1' wx:if="{{item.hasfocus}}" bindtap='focus' id="{{idx}}">已关注</text>
+</view>
+<view class='nofocusPlate' wx:if="{{nofocusPlate}}">他还没有关注任何位置❤️</view>

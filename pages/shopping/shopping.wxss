@@ -1,0 +1,67 @@
+.header{
+  height: 190rpx;
+  position: relative;
+  border-bottom: 20rpx solid rgb(240, 240, 240);
+}
+.shopImage{
+  width: 110rpx;
+  height: 110rpx;
+  margin-top: 40rpx;
+  margin-left: 26rpx;
+  float: left;
+}
+.shopImage image{
+  width: 100%;
+  height: 100%;
+}
+.right{
+  margin-left:30rpx;
+  height: 150rpx;
+  float: left;
+  top: 15rpx;
+  line-height: 100rpx;
+}
+.certif{
+  width: 81rpx;
+  height: 37rpx;
+  font-size:16rpx;
+  padding:0;
+  background-color: rgb(134, 223, 182);
+  color: #ffffff;
+}
+.jiantou{
+  width: 44rpx;
+  height: 62rpx;
+  position: absolute;
+  right: 40rpx;
+  top: 60rpx;
+}
+.jiantou image{
+  width: 24rpx;
+  height: 42rpx;
+  position: absolute;
+  padding-top: 14rpx;
+  padding-left: 7rpx;
+}
+/* 平台服务费 */
+.myRelease{
+  position: relative;
+  width: 100%;
+  height: 81rpx;
+  border-bottom: 1px solid #D3D3D3;
+  background: #FFFFFF;
+  margin-top: 22rpx;
+}
+
+.myRelease text{
+  font-size: 28rpx;
+  color: #2B2B2B;
+  letter-spacing: 4rpx;
+  margin-left: 30rpx;
+}
+.icon_img{
+  width: 39rpx;
+  height: 49rpx;
+  float: left;
+  margin-left: 30rpx;
+}

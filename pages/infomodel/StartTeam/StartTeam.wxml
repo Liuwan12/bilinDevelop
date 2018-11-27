@@ -1,0 +1,53 @@
+<!-- 开始拼团页面 -->
+<view>
+  <view class='pagetop'>
+      <image class='avater'></image>
+      <view class='username'>我是买家图像</view>
+      <image class='usersex'></image>
+  </view>
+  <view class='info_middle'>
+    <!-- 单选按钮 -->
+    <view class='list_item' wx:for="{{radioValues}}" data-index="{{index}}" bindtap='radioChange' wx:key="index">
+      <view wx:if="{{item.selected}}" class='item'>
+          <view class='itemselect'></view>
+      </view> 
+      <view wx:else class='item'></view>
+      <text class='itemvalue'>{{item.value}}</text> 
+    </view>
+    <view class='info_bottom'>
+      <view style='display:inline-block;' wx:if="{{params==2}}" >拼团价</view>
+      <view style='display:inline-block;' wx:if="{{params==1}}">单买价</view>
+      <view class='addrel'>¥{{money}}.00</view>
+    </view>
+    <view class='info_bottom'>
+      <view class='info_quan'>数量</view>
+      <view class='quantity'>
+        <image src='/image/pintuan/jian.png' class='count' bindtap='minuscount'></image>
+        <input class='info_inp' value='{{counts}}'></input>
+        <image src='/image/pintuan/jia.png' class='count' bindtap='addcount'></image>
+        <view style='float:right;'>*件</view>
+      </view>
+    </view>
+    <view class='info_bottom' wx:if="{{params==2}}">
+      发起拼团(需满100x(单位)成团)
+    </view>
+    <view class='addbottom' bindtap='toAddrel'>
+      <view class='addname'>收货人</view>
+      <view class='youjt'>
+         <image src='/image/shangpu/jiantou@2x.png'></image>
+      </view>
+      <view class='no_one' wx:if="{{!address}}">暂无收货人，点击添加</view>
+      <view class='addUser' wx:if="{{address}}">
+          <view>{{userName}}</view>
+          <view>{{telNumber}}</view>
+          <view>{{address}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='bottom'>
+    <view class='paybtn' bindtap='toPay'>
+        <view>¥{{paymoney}}.00</view>
+        <view>支付</view>
+    </view>
+  </view>
+</view>

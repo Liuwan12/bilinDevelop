@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "淘比邻:我的建议",
+  "usingComponents": {
+    "acd": "/pages/components/ad/ad"
+  }
+}

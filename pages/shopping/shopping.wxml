@@ -1,0 +1,25 @@
+<!-- 我管理的商铺 -->
+<ad unit-id="adunit-c623be8d379b78b2"></ad>
+<view class='header'>
+    <view class='shopImage'>
+        <image src='{{logoImage}}' wx:if="{{haslogoImage}}"></image>
+        <image src='/image/shangpu/moren.png' wx:if="{{!haslogoImage}}"></image>
+    </view>
+    <view class='right'>
+        {{name}}
+        <button class='certif'>已认证</button>
+        <view class='jiantou' bindtap='toshopDetail'>
+          <image src='/image/shangpu/jiantou@2x.png'></image>
+        </view>
+    </view>
+</view>
+<view class="myRelease" bindtap='toMyshopList'>
+  <image class="icon_img" src='/image/shangpu/fabu@2x.png'></image>
+  <text>我商铺的发布</text>
+</view>
+<navigator url='/pages/shopping/ServiceFee/ServiceFee'>
+  <view class="myRelease">
+    <image class="icon_img" src='/image/shangpu/jiaofei@2x.png'></image>
+    <text>平台服务费缴纳</text>
+  </view>
+</navigator>

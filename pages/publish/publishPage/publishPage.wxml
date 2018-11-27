@@ -1,0 +1,324 @@
+<view class='shade' wx:if="{{shade}}"></view>
+<view class='select'>
+  <!-- <view class='select_menu' catchtap='menuTap' data-current="3">
+      <text class='{{selectTapCurrent==null|selectTapCurrent=="3"?"active":""}}'>拼团</text>
+   </view>
+   <view class='select_menu' catchtap='menuTap' data-current="4">
+      <text class='{{selectTapCurrent=="4"?"active":""}}'>砍价</text>
+   </view> -->
+   <view class='select_menu' catchtap='menuTap' data-current="1">
+      <text class='{{selectTapCurrent==null|selectTapCurrent=="1"?"active":""}}'>租房       </text>
+   </view>
+   <view class='select_menu' catchtap='menuTap' data-current="0">
+      <text class='{{selectTapCurrent=="0"?"active":""}}'>闲置</text>
+   </view>
+   <view class='select_menu' catchtap='menuTap' data-current="2">
+      <text class='{{selectTapCurrent=="2"?"active":""}}'>求助</text>
+   </view>
+</view>
+<!-- 内容 -->
+<view class='bg'>
+  <!-- 图像 昵称 -->
+  <view class='userInfo'>
+    <image class='userImage' src='{{userInfo.avatar}}'></image>
+    <view class='username'>{{userInfo.nickname}}</view>
+    <view class='usersex'>
+        <image src='{{userInfo.sex}}'></image>
+    </view>
+  </view>
+  <view class='borFrame'>
+      <!-- <view class='add_title' wx:if="{{bindshop}}">
+        <view bindchange="radioChange">
+          <view class='list_item' wx:for="{{radioValues}}" data-index="{{index}}" bindtap='radioChange' wx:key="index">
+          <view wx:if="{{item.selected}}" class='item'>
+              <view class='itemselect'></view>
+          </view> 
+          <view wx:else class='item'></view>
+          <text class='itemvalue'>{{item.value}}</text> 
+          </view>
+        </view>
+      </view> -->
+      <view class='add_title sanjiao1'>
+        <text class='content1' wx:if="{{bindtrans}}">闲置:</text>
+        <text class='content1' wx:if="{{bindlease}}">租房:</text>
+        <text class='content1' wx:if="{{bindjoin}}">求助:</text>
+        <text class='content1' wx:if="{{bindshop}}">拼团:</text>
+        <text class='content1' wx:if="{{bargain}}">砍价:</text>
+        <input class='add_input' maxlength='30' bindinput='titleInput' focus='true' wx:if="{{bindtrans}}"></input>
+        <input class='add_input' maxlength='30' bindinput='titleInput' focus='true' wx:if="{{bindlease}}"></input>
+        <input class='add_input' maxlength='30' bindinput='titleInput' focus='true' wx:if="{{bindjoin}}"></input>
+        <input class='add_input' maxlength='30' bindinput='titleInput' focus='true' wx:if="{{bindshop}}"></input>
+        <text class='nums'>小于30字</text>
+      </view>
+      <view class='add_content'>
+        <text class='content'>详情:</text>
+        <textarea class='add_con {{addInput1==1?"add_input1":""}}' maxlength='140' bindinput='contentInput'></textarea>
+        <text class='num1'> 小于140字</text>
+      </view>
+      <!-- 添加照片 -->
+      <view class='addPhoto'>
+        <scroll-view scroll-x class='addPhotos {{hasPhotos==true||isshowvideo==true?"hasphoto":""}}'>
+          <!-- 添加照片 -->
+          <view wx:for="{{pics}}" wx:key="index" class="add_photo" wx:for-index="idx" id="{{idx}}" wx:if="{{pics}}">
+            <view class='picture'>
+                <image src='{{item}}' class='item' id="{{idx}}"></image>
+            </view>
+            <view class='cuowuxx' id="{{idx}}" bindtap='cuowu'>
+              <image src='/image/smallmodel/cuowu.png'></image>
+            </view>
+          </view>
+          <!-- 添加视频 -->
+          <view wx:if="{{isshowvideo}}" class="add_photo {{addInput1==1?'add_input1':''}}">
+            <video src='{{videosrc}}' autoplay='true'></video>
+            <view class='cuowuxx' bindtap='delvideo'>
+              <image src='/image/smallmodel/cuowu.png'></image>
+            </view>
+          </view>
+          <view class='changepto {{hasPhotos==true||isshowvideo==true?"changepto1":""}}' bindtap='onaddPhoto'>
+            <view class='photo'>
+              <image src="/image/add.png" class='img'></image>
+            </view>
+              <text class='pto_txt'>照片/短视频</text>
+          </view>
+        </scroll-view>
+      </view>
+      <!-- 价格 -->
+      <view class='add_title' wx:if="{{bindlease}}" >
+        <text class='content'>租金:</text>
+        <text class='num' bindtap="monthPrice" wx:if="{{!unused.month}}">请输入月租金 ></text>
+        <text class='num' bindtap='monthPrice' wx:if="{{unused.month}}">{{unused.month}}元</text>
+      </view>
+      <view class='add_title' wx:if="{{bindtrans}}">
+        <text class='content' >价格:</text>
+        <text class='num' type="text" bindtap="inputPrice" wx:if="{{!unused.newPrice}}">开价 ></text>
+        <text class='num' bindtap="inputPrice" wx:if="{{unused.newPrice}}">{{unused.newPrice}}元</text>
+      </view>
+       <!-- 拼团团价 -->
+      <view class='add_title' style='border:none;' wx:if="{{bindshop}}">
+        <view style='display:inline-block;'>拼团价</view>
+        <view style='float:right'>
+            ¥<input placeholder='请输入拼团价' class='join_inp' placeholder-class='pla_inp'></input>/
+            <input placeholder='例：10公斤、1包' class='join_inp2' placeholder-class='pla_inp'></input>
+        </view>
+      </view>
+      <view class='add_title' wx:if="{{bindshop}}">
+        <view style='display:inline-block;'>单买价</view>
+        <view style='float:right;'>
+            ¥<input placeholder='请输入单买价' class='join_inp' placeholder-class='pla_inp'></input>/<text>(单位名称)</text>
+        </view>
+      </view>
+      <!-- 砍价市场价 -->
+      <view class='add_title' wx:if="{{bargain}}" style='border:none;'>
+        <view style='display:inline-block;'>商品市场价</view>
+        <view style='float:right'>
+            ¥<input placeholder='请输入商品市场价' class='join_inp' placeholder-class='pla_inp'></input>/
+            <input placeholder='例：10公斤、1包' class='join_inp2' placeholder-class='pla_inp'></input>
+        </view>
+      </view>
+      <view class='add_title' wx:if="{{bargain}}">
+        <view style='display:inline-block;'>商品目标价</view>
+        <view style='float:right;'>
+            ¥<input placeholder='需大于等于0' class='join_inp' placeholder-class='pla_inp'></input>/<text>(单位名称)</text>
+        </view>
+      </view>
+    <!-- 头 -->
+      <view class='add_title' wx:if="{{bindtrans}}" bindtap='onClassify'>
+        <text class='content'>分类及参数:</text>
+        <view class='num' wx:if="{{!unused.classify}}">请选择闲置物品参数 ></view>
+        <text class='num' wx:if="{{unused.classify}}">{{unused.classify}}</text>
+      </view>
+      <view class='add_title' wx:if="{{bindlease}}" bindtap='lease'>
+          <text class='content'>分类及参数:</text>
+          <view class='num' wx:if="{{!unused.join}}">请选择租房参数 ></view>
+          <text class='num' wx:if="{{unused.join}}">{{unused.join}}</text>
+      </view>
+      <view class='add_title' wx:if="{{bindshop}}" bindtap='onClassify'>
+        <text class='content'>分类及参数:</text>
+        <view class='num' wx:if="{{!unused.classify}}">请选择拼团参数 ></view>
+        <text class='num' wx:if="{{unused.classify}}">{{unused.classify}}</text>
+      </view>
+      <!-- 链接 -->
+      <!-- <view class='add_title' wx:if="{{bindshop}}">
+        <text class='content'>链接(点击即可复制):</text>
+        <input placeholder='非必填' bindinput='linkurl' class='num linkurl' placeholder-style='color:#A9ADBB'></input>
+      </view> -->
+      <view class='add_title' wx:if="{{bindtrans}}">
+        <text class='content'>链接(点击即可复制):</text>
+        <input placeholder='可填原购买链接于此处' bindinput='linkurl' class='num linkurl' placeholder-style='color:#A9ADBB'></input>
+      </view>
+      <!-- 拼团条件 -->
+      <view class='add_title' wx:if="{{bindshop}}" style='border:none;'>
+        <view style='display:inline-block;'>拼团成团条件</view>
+        <view style='float:right'>
+            团购满<input placeholder='请填写件数' class='join_inp' placeholder-class='pla_inp'></input>(单位名称)成团          
+        </view>
+      </view>
+      <view class='add_title' wx:if="{{bindshop}}">
+        <view style='display:inline-block;'>团购券有效期至成团后</view>
+        <view style='float:right;'>
+            <input placeholder='需不小于72' class='join_inp' placeholder-class='pla_inp'></input>小时
+        </view>
+      </view>
+      <!-- 截止日期 -->
+      <!-- <view class='add_expirdata' wx:if="{{bindshop&&!radioValues[0].selected==true}}">
+        <text class='stopTime'>拼团截止:</text>
+        <view class='add_time'>
+              <picker mode="time" value="{{time1}}" start="00:00" end="23:59" bindchange="bindTimeChange" class='times'>
+              {{time1}}  >
+              </picker>  
+        </view>
+        <view class='add_time'> 
+             <picker mode="date" value="{{date}}" start="2018-10-20" end="2025-1-1" bindchange="bindDateChange" class='times'>
+              {{dates}}  >
+            </picker>  
+        </view>
+      </view> -->
+      <!-- 位置 -->
+      <view class='add_title'>
+        <view>
+        <view wx:if="{{!showsearch}}" class="localCity" bindtap='tocitylist'>{{cityname}} </view>
+        <image wx:if="{{!showsearch}}" src='/image/smallmodel/xjiantou.png' class='todetail'></image>
+      </view>
+      <view wx:if="{{!showsearch}}" class="search_plate" bindtap='tosearch'>
+        <view class="searchplate">
+          <image src='/image/dingwei@2x.png'></image>
+        </view>
+        <view style='display:inline-block;float:left;'>
+          <view  class='weizhi' wx:if="{{!platevalue}}">{{platevalue0}}</view>
+          <view  class='weizhi' wx:if="{{platevalue}}">{{platevalue}}</view>
+          <image src='/image/smallmodel/xjiantou.png' class='todetail'></image>
+        </view>
+      </view>
+      <view class="search" wx:if="{{showsearch}}">
+        <view style='display:inline-block;'>
+            <image src='/image/sousuo@2x.png' class="shuImg2"></image>
+        </view>
+        <input placeholder='请输入社区名称' class='head_txt' focus="true" value='{{platevalue}}' wx:if="{{noplate}}" bindconfirm="confirm1" bindtap="searchplate" bindinput='input1'></input>
+      </view>
+      <text class='cancel' bindtap='toweizhi' wx:if="{{showsearch}}">取消</text>
+    <!-- 搜索位置弹窗 -->
+      <scroll-view class='plate_pop' wx:if="{{showsearch}}" scroll-y>
+          <view class='plateCell' wx:for="{{plateList}}" wx:for-index="idx" wx:key="key" id="{{idx}}">
+            <view class='iconplate'>
+              <image src='/image/plateIcon@2x.png'></image>
+            </view>
+            <text class='platename' bindtap='toChooseDetail' id="{{idx}}">{{plateList[idx].plate.title}}</text>
+            <text class='placeCell_hasFocus' data-current = "{{idx}}">已关注</text>
+          </view>
+          <view style='border-top:2rpx solid #e9e9e9;'>
+            <view class='plateCell' wx:for="nearPlate" wx:for-index="idx" wx:key="key" id="{{idx}}">
+              <view class='iconplate' wx:if="{{nearPlate[idx]}}">
+                <image src='/image/plateIcon@2x.png'></image>
+              </view>
+              <text class='platename' bindtap='choosePlate' id="{{idx}}">{{nearPlate[idx].plate.title}}</text>
+              <text class='placeCell_FocusView' bindtap='isFocus' data-current = "{{idx}}" wx:if="{{nearPlate[idx].onfocus}}">+关注</text>
+              <text class='placeCell_hasFocus' wx:if="{{nearPlate[idx].nonfocus}}" data-current = "{{idx}}">已关注</text>
+            </view>
+          </view>
+      </scroll-view>
+      </view>
+      <!-- <teampublish wx:if="bindshop"></teampublish> -->
+      <!-- 配送方式 -->
+      <view class='add_title' wx:if="{{bindshop||bargain}}">
+        <view style='display:inline-block;'>配送方式：</view>
+        <view bindchange="distrWay" class='giveway'>
+          <view class='list_item' wx:for="{{distrValues}}" data-index="{{index}}" bindtap='distrWay' wx:key="index">
+          <view wx:if="{{item.selected}}" class='item'>
+              <view class='itemselect'></view>
+          </view> 
+          <view wx:else class='item'></view>
+          <text class='itemvalue'>{{item.value}}</text> 
+          </view>
+        </view>
+      </view>
+      <!-- 用户自取地址 -->
+      <view class='add_address' wx:if="{{(bindshop||bargain)&&(distrValues[0].selected==true||distrValues[2].selected==true)}}" bindtap='toAddress'>
+        <view class='selfaddress'>用户自取地址</view>
+        <view class='num' wx:if="{{!address}}">请选择取货地址 ></view>
+        <text wx:if="{{address}}" class='add_text'>{{address}}阿四节课后噶时刻还得噶哭啥 </text>
+        <text style='float:right' wx:if="{{address}}"> > </text>
+      </view>
+      <view class='add_title frame' bindtap='toQQMap' wx:if="{{!bindshop&&!bargain}}">
+        <text class='chooseWXPlate'>位置导航:</text>
+        <view class='chooseWXPlateN'>
+          <image src='/image/dingwei.png' class='chooseIcon'></image>
+          <view  wx:if="{{!plateQQName}}"> 请在地图上选择</view>
+          <view  wx:if="{{plateQQName}}">
+            {{plateQQName}}</view>
+          </view>
+      </view>
+  </view> 
+</view>
+
+<!-- 调起添加视频和图片弹窗 -->
+<view wx:if="{{popaddphoto}}">
+    <view class='pop_top'>
+      <view class='pop_photo' bindtap='popphoto'>照片</view>
+      <view bindtap='popvideo'>视频</view>
+    </view>
+    <view class='pop_cancel' bindtap='popcancel'>取消</view>
+</view>
+<view>
+  <loading hidden="{{hidden}}" bindchange="loadingChange">
+    发布中...
+  </loading>
+</view>
+<form bindtap='onrealese' class='release' bindsubmit="submit" report-submit='true'>
+  <button style='height: 110rpx;background:#ffffff;' formType="submit">
+      <image src='/image/tabBar/fabu@2x.png' class='fabu'></image>
+      <view class='rel_txt'>点此发布</view>
+  </button>
+</form>
+<view class='pop' wx:if="{{hideName}}">
+      <text class='pop_txt'>请绑定手机号</text>
+      <view class='phone'>
+        <image src='/image/zh_icon_phone@2x.png'></image>
+        <input placeholder='请输入您的手机号' class='phe_inp' type= "number" bindinput='inputPhoneNum' maxlength="11" />
+      </view>
+      <view class='valid'>
+          <image class="val_phe" src='/image/sr_icon_phone@2x.png'></image>
+          <input placeholder='请输入您的手机号验证码' type='number'  bindinput='onverify' class='phe_inp2'></input>
+          <image class='val_val' src='/image/sr_btn_hqyz@2x.png' bindtap='getVerificationCode' wx:if="{{verification}}"></image>
+          <button class='count' wx:if="{{ontime}}">{{time}}s</button>
+      </view>
+      <text class='pop_queren' bindtap='onconfirm'>确认</text>
+</view>
+<!-- 输入月租金 -->
+<view wx:if="{{monthprice}}" class='pay-keyboard1'> 
+  <view class='shade'>
+    <view class='month'>
+      <text>月租金</text>
+      <input placeholder='¥0' class='old_pri' type="number" cursor-spacing='13' bindinput='month' focus='true'></input>
+      <view catchtap="prihide" class='completeinput'>完成</view>
+    </view>
+  </view>           
+</view>
+
+
+<view wx:if="{{onkeyboard}}">
+   <view class="shade" bindtap='switchBoard'></view>
+    <view class="paykeyboard">
+        <view class='newPrice'>
+            <text class='pri_sel'>想卖多少钱？</text>
+            <view class='pri' bindtap='newprice'>
+                <text>¥</text>
+                <input value='{{unused.newPrice}}' focus='true' bindtap='onNewPrice'></input>
+                <!-- <view  class='className'></view> -->
+            </view>
+        </view>
+        <view class='oldPrice'>
+            <text>原价:</text>
+            <input class='old_pri'  placeholder='¥0' value='{{unused.oldPrice}}' bindtap='onoldprice'></input>
+        </view>
+        <view class='table' wx:if="{{!showKeyboard}}">
+          <view wx:for="{{keyboard}}" wx:for-index="item" class='table_item' catchtap='keyTap' data-keys="{{keyboard[item]}}">{{keyboard[item]}}</view>
+        </view>
+        <view class='table' wx:if="{{showKeyboard}}">
+          <view wx:for="{{keyboard}}" wx:for-index="item" class='table_item' catchtap='keyTap2' data-keys="{{keyboard[item]}}">{{keyboard[item]}}</view>
+        </view>
+        <view class='keyboard_right'>
+          <view class='another' bindtap='Another'>下一项</view>
+          <view class='keycancel' bindtap='switchBoard'>完成</view>         
+        </view>
+   </view>
+</view>

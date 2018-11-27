@@ -1,0 +1,288 @@
+page{
+  background: #f3f2f7;
+}
+.bord{
+  padding: 32rpx 10rpx 0 18rpx;
+  position: relative;
+}
+.img_logo{
+  height: 100rpx;
+}
+.img_logo image{
+  width: 100rpx;
+  height: 100rpx;
+  background: #ffffff;
+  float: left;
+}
+.shopname{
+  display: inline-block;
+  font-size: 28rpx;
+  position:relative;
+  top:18rpx;
+  left:22rpx;
+}
+.shop_name{
+  float:right;
+  margin-top:24rpx;
+  width:450rpx;
+  border-bottom:1rpx solid #e9e9e9;
+  padding:0;
+  text-align:center;
+}
+/* 中间部分 */
+.middle{
+  width: 724rpx;
+  height: 846rpx;
+  background: #ffffff;
+  margin-top: 22rpx;
+  padding-left: 8rpx;
+}
+.search{
+  padding-top: 24rpx;
+}
+.searchplate{
+  width:40rpx;
+  height:40rpx;
+  margin-left:12rpx;
+}
+.hasfocus{
+  float:right;
+  font-size:24rpx;
+  margin-right:24rpx;
+  margin-top: 10rpx;
+}
+.search_input{
+  background: #f3f2f7;
+  width: 382rpx;
+  margin-left: 18rpx;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+}
+/* 营业执照 */
+.addlicense{
+  display: inline-block;
+  font-size: 28rpx;
+}
+.title{
+  display: inline-block;
+  font-size: 28rpx;
+  padding-top: 65rpx;
+}
+.red{
+  color: #ff5555;
+  display: inline-block;
+}
+.inp_txt{
+  overflow: visible;
+  float:right;
+  width:450rpx;
+  margin-right:16rpx;
+  margin-top: 51rpx;
+  padding-left: 16rpx;
+  border-bottom: 1rpx solid rgb(240, 240, 240);
+  text-align: right;
+  padding-right: 16rpx;
+}
+/* 同意协议 */
+.quan{
+  width: 20rpx;
+  height: 20rpx;
+  border-radius:50%;
+  border:1rpx solid black;
+  float:left;
+  margin-right:10rpx;
+  margin-top:5rpx;
+}
+.agree{
+  width: 20rpx;
+  height: 20rpx;
+  display: inline-block;
+}
+.agree image{
+  width: 100%;
+  height: 100%;
+}
+.certif{
+  font-size: 24rpx;
+  margin-top:20rpx;
+}
+.submit{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.submit image{
+  width: 106rpx;
+  height: 106rpx;
+  /* width:  */
+  margin-left: 325rpx;
+}
+.sub_txt{
+  text-align: center;
+}
+/* 没有手机号 */
+.nonePhone{
+  font-size: 28rpx;
+  color: rgb(255, 81, 81);
+}
+/* 绑定手机号样式 */
+.pop{
+  top: 0;
+  left: 20rpx;
+  height: 514rpx;
+  width: 710rpx;
+  position: fixed;
+  margin-top: 290rpx;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20rpx;
+  z-index: 999;
+  border:1rpx solid #ff5555;
+}
+.cuowu{
+  width: 23rpx;
+  height: 23rpx;
+  float: right;
+  margin-right: 22rpx;
+  margin-top: 22rpx;
+}
+input{
+  display: inline-block;
+  font-size: 34rpx;
+  padding-left: 22rpx;
+  width: 370rpx;
+}
+.phe_inp{
+  vertical-align: middle;
+}
+.pop_txt{
+  padding-left: 32rpx;
+  margin-top: 27rpx;
+  float: left;
+}
+.phone{
+  padding-bottom: 30rpx;
+  margin: 49rpx 0 30rpx 55rpx;
+  border-bottom: 1px solid rgb(190, 190, 190);
+  width: 610rpx;
+  display: inline-block;
+}
+.phe_inp{
+  overflow: visible;
+  width: 390rpx;
+}
+.phe_inp2{
+  overflow: auto;
+  width: 390rpx;
+}
+.phone image{
+  width: 40rpx;
+  height: 43rpx;
+}
+.valid{
+  margin-left: 55rpx;
+  margin-bottom: 80rpx;
+  border-bottom: 1px solid rgb(190, 190, 190);
+  float: left;
+  height: 90rpx;
+}
+.valid .val_phe{
+  width: 40rpx;
+  height: 43rpx;
+}
+.valid .val_val{
+  width: 160rpx;
+  height: 60rpx;
+}
+.count{
+  float: right;
+  bottom: 8rpx;
+  width: 106rpx;
+  height: 60rpx;
+  font-size: 28rpx;
+  background-color: rgb(144, 144, 144);
+  margin-left: 35rpx;
+}
+.pop_queren{
+  width: 169rpx;
+  height: 66rpx;
+  margin-left: 270rpx;
+  background-color: rgb(255, 85, 85);
+  color: #ffffff;
+  border-radius: 25rpx;
+  font-size: 30rpx;
+  text-align: center;
+  display: inline-block;
+  line-height: 66rpx;
+}
+/* 蒙层 */
+.shade{
+    position: fixed;
+    z-index: 11;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    left: 0;
+    top: 0;
+}
+/* 上传营业执照 */
+.uploading{
+  width: 180rpx;
+  height: 180rpx;
+  border: 8rpx solid #ff5555;
+}
+.uploading image{
+  width: 100%;
+  height: 100%;
+}
+.tianjia{
+  width: 160rpx;
+  height: 160rpx;
+  margin:0 auto;
+  padding-top: 10rpx;
+}
+.tianjia image{
+  width: 100%;
+  height: 100%;
+}
+.uptext{
+  font-size: 24rpx;
+  margin-top: 38rpx;
+  margin-left: 40rpx;
+}
+/* 搜索位置弹框 */
+.focusplate{
+  background: #FFFFFF;
+  z-index: 10;
+  position: fixed;
+  top: 240rpx;
+  left: 20rpx;
+  width: 480rpx;
+  box-shadow: 4rpx 0rpx 13rpx rgba(7, 1, 2, 0.15);
+}
+.iconplate{
+  width:18rpx;
+  height:22rpx;
+}
+.plateCell{
+  width: 510rpx;
+  height: 88rpx;
+  float: left;
+  border-bottom: solid 1px #e9e9e9;
+}
+.plateCell image{
+  width: 18rpx;
+  height: 22rpx;
+  margin-left: 41rpx;
+  margin-top: 33rpx;
+}
+.plateCell text{
+  font-size: 30rpx;
+  color: #353535;
+  display:inline-block;
+  margin-left:83rpx;
+  width: 400rpx;
+  overflow:hidden;
+  height:48rpx;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}

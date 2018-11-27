@@ -1,0 +1,16 @@
+<view class='openreview'>
+      <text class='open_txt'>提交开通位置审核</text>
+      <view class='city'>
+        <text>当前城市: </text>
+        <text>{{cityname}}</text>
+      </view>
+      <view class='open_posi'>
+        <text>位置名称</text>
+        <input class='open_inp' placeholder='请输入详细的位置名称' bindinput='positioninput' placeholder-style='font-size:24rpx;'></input>
+      </view>
+      <view class='open_posi'>
+        <text>申请人联系电话</text>
+        <input class='open_inp1' bindinput='phoneinput'></input>
+      </view>
+      <button class='submit' catchtap='toapply'>提交</button>
+</view>

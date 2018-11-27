@@ -1,0 +1,17 @@
+<acd tid="adunit-c623be8d379b78b2"></acd>
+<view wx:for="{{GrabList}}" wx:key="{{item}}" wx:for-index="idx" class='grablist'>
+    <view class='avater' id='{{idx}}' bindtap='toHisInfo'>
+      <image src='{{item.giveRedUser.avatar}}'></image>
+    </view>
+    <view class='name'>
+      <view class='user_name'>{{item.giveRedUser.nickname}}</view>
+      <view class='usersex'>
+        <image src='{{item.giveRedUser.sex}}'></image>
+      </view>
+    </view>
+    <view class='contents'>
+      <view style='padding:10rpx;'>
+      我成功参与了邻粉{{item.giveRedUser.nickname}}发布的红包接龙，我比从前富有了<text class='money'>{{item.money}}</text>元</view>
+      <view style='padding:10rpx;'>{{item.grabdate}}</view>
+    </view>
+</view>

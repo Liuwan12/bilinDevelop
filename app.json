@@ -1,0 +1,71 @@
+ {
+  "pages": [
+    "pages/index/index",
+    "pages/publish/publishPage/publishPage",
+    "pages/myself/myself",
+    "pages/infomodel/StartTeam/StartTeam",
+    "pages/infomodel/teamPay/teamPay",
+    "pages/publish/usualAddress/usualAddress",
+    "pages/components/jointeam/jointeam",
+    "pages/components/bargain/bargain",
+    "pages/infomodel/infomodel",
+    "pages/myself/redpaper/redpaper",
+    "pages/myself/myfocus/myfocus",
+    "pages/shopping/ShopCertification/ShopCertification",
+    "pages/shopping/shoppingList/shoppingList",
+    "pages/shopping/ServiceFee/ServiceFee",
+    "pages/shopping/packageDetail/packageDetail",
+    "pages/shopping/shoppingDetail/shoppingDetail",
+    "pages/shopping/shopping",
+    "pages/myself/mycollection/mycollection",
+    "pages/myself/managePlate/PlateDetail/PlateDetail",
+    "pages/publish/publish",
+    "pages/myself/mypublish/mypublish",
+    "pages/publish/classChoose/classChoose",
+    "pages/regionModel/applyModeler/applyModeler",
+    "pages/myself/personalInfo/personalInfo",
+    "pages/myself/myfollow/myfollow",
+    "pages/myself/managePlate/managePlate",
+    "pages/myself/myfollowModel/myfollowModel",
+    "pages/hisFollowposition/hisFollowposition",
+    "pages/hisHomepage/hisHomepage",
+    "pages/publish/parameter/parameter",
+    "pages/myself/personalInfo/userAgreement/userAgreement",
+    "pages/regionModel/applyModeler/modelerRule/modelerRule",
+    "pages/hisModelInfo/hisModelInfo",
+    "pages/hisFollowModel/hisFollowModel",
+    "pages/myself/feedback/feedback",
+    "pages/components/selectCity/selectCity",
+    "pages/components/ad/ad",
+    "pages/components/fourmList/fourmList",
+    "pages/components/plateCheck/plateCheck",
+    "pages/cityList/cityList"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FF4400",
+    "navigationBarTitleText": "淘比邻",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#FF4400"
+  },
+  "tabBar": {
+    "color": "#7F7F7F",
+    "selectedColor": "#FF5555",
+    "borderStyle": "black",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/publish/publish",
+        "text": "二手发布",
+        "iconPath": "image/tabBar/fabu@2x.png",
+        "selectedIconPath": "image/tabBar/fabu@2x.png"
+      },
+      {
+        "pagePath": "pages/publish/publish",
+        "text": "我的",
+        "iconPath": "image/tabBar/wode@2x.png",
+        "selectedIconPath": "image/tabBar/wode_selected@2x.png"
+      }
+    ]
+  }
+}

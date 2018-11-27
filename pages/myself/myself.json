@@ -1,0 +1,8 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarTitleText": "我的",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "acd": "/pages/components/ad/ad"
+  }
+}

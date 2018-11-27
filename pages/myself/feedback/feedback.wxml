@@ -1,0 +1,17 @@
+<view class='all_content'>
+  <view class='userInfo'>
+    <image class='userAvater' src="{{UserInfo.avatar}}"></image>
+    <text class='username'>{{UserInfo.nickname}}</text>
+    <image class="userSex" src="{{UserInfo.sex}}"></image>
+  </view>
+  <view class='feedback'>
+    <textarea placeholder='{{feedPlaceHolder}}' class='textview' bindblur='feedBlur' bindfocus='feedFocus' bindinput='feedContent' maxlength='140' value="{{feedContent}}"></textarea>
+    <text class='textNum'>{{textNum}}</text>
+  </view>
+  <view class='commit' bindtap='commitClick'>
+  <image src='/image/tabBar/fabu@2x.png'></image>
+  <text>提交</text>
+  </view>
+</view>
+
+<acd style='margin-top:50rpx;' tid="adunit-c623be8d379b78b2"></acd>

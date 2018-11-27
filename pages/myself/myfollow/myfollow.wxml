@@ -1,0 +1,38 @@
+   <view class="menu_box">
+    <view class='menu_content'>
+      <text catchtap="selectTap" data-current="0" class='menu1 {{menuTapCurrent==null|menuTapCurrent=="0"?"active":""}}'>我的关注({{myFollow}})</text>
+    </view>
+    <view class='menu_content' catchtap="selectTap" data-current="1">
+      <text class='menu1 {{menuTapCurrent=="1"?"active":""}}' >我的邻粉({{myFans}})</text>
+    </view>
+    <view class='menu_content' data-current="2" catchtap="selectTap">
+      <text class='menu1 {{menuTapCurrent=="2"?"active":""}}'>附近邻粉</text>
+    </view>
+   </view>
+<!-- <swiper  circular="false" current="{{menuTapCurrent}}" class="swiper-box" duration="50" style="height:{{winHeight}}rpx" bindchange="switchTab">
+<swiper-item wx:for="{{[0,1]}}" wx:key="key"> -->
+<!-- <scroll-view scroll-y="true" class="scoll-h" > -->
+<view  wx:for="{{showList}}" wx:key="key"  wx:for-index="idx">
+  <view class="info_box">
+    <view bindtap='toHisInfo' id='{{idx}}' class='toInfo'>
+          <image src="{{item.avatar}}"></image>
+          <text class="info_box_name">{{item.nickname}}</text>
+          <view class='usersex' id="{{idx}}">
+              <image src='{{item.sex}}'></image>
+          </view>
+    </view>
+    <view class="giveup_follow" catchtap='giveup' id="{{idx}}" wx:if="{{showList[idx].onfocus}}">+关注</view>
+     <view class="giveup_follow" catchtap='giveup' id="{{idx}}" wx:if="{{showList[idx].nonfocus}}">已关注</view>
+    </view>
+    <view style='margin-top:30rpx;' wx:if="{{item.adshow}}">
+        <image src='/image/smallmodel/taobilin.png' class='adimage'></image>
+        <view class='adtitle'>淘比邻</view>
+        <image src='https://fy-img.oss-cn-shanghai.aliyuncs.com/img/20180227/a94e640c-f05a-4ab4-9cda-70daf079c0e9.jpg' class='adavater'></image>
+        <view class='adunit'>
+        <ad unit-id="adunit-c623be8d379b78b2"></ad>
+        </view>
+    </view>
+</view>
+  <!-- </scroll-view>
+  </swiper-item> -->
+<!-- </swiper> -->

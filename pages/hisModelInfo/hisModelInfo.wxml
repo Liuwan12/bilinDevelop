@@ -1,0 +1,18 @@
+<!-- 广告 -->
+<acd tid="adunit-5c035e3806a155cd"></acd>
+<!-- 选项卡 start-->
+	<scroll-view class="tabButtonAll" id="tabButtonAll" scroll-x scroll-with-animation scroll-left="{{line.scrLeft}}">
+		<view class="tabBtn {{index == line.oldActive ? 'active' : ''}}"  wx:for="{{list}}" wx:key="key"  bindtap="lineInfo" id="{{index}}">{{item.name}}</view>
+		<div class="line" style="width:{{line.width}}px;left:{{line.left}}px"></div>
+	</scroll-view>
+   <!-- 选项卡 end-->
+ <!-- 列表 start-->
+ <swiper style="height: {{clientHeight?clientHeight+230+'rpx':'auto'}}" current="{{line.swipeIndex}}" duration="300" bindchange="swipeChange"> 
+    <swiper-item wx:for="{{list}}" wx:key="key">
+      	<scroll-view scroll-top="{{scrollTop}}" style="height: {{clientHeight?clientHeight+230+'rpx':'auto'}}"   scroll-x="false" scroll-y="true" bindscrolltolower="onReachBottom"> 
+        <!-- 帖子列表 -->
+     <fourmList listArr="{{hisPublicArr}}" pageFlag="hisPublic"></fourmList>
+    </scroll-view>
+    </swiper-item>
+    </swiper> 
+  <!-- 列表 end>

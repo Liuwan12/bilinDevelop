@@ -1,0 +1,78 @@
+<import src="../../pages/tabBar/tabBar.wxml"/>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
+<view class='shade' wx:if="{{hideName}}"></view>
+<view class="personal">
+  <view class="touxiang" >
+    <image src='{{myavater}}' bindtap='skip'></image>
+  </view>
+  <view class='nameLine'>
+    <text class="name" bindtap='skip'>{{myName}}</text>
+    <image src='{{mySex}}' class="img"></image>
+    <view class='hasPhone' wx:if="{{bindhasPhone}}" style='display:inline-block;position:relative;'>
+        <text class="WXnum" bindtap='skip'>{{myPhone}}</text>
+        <image src='/image/smallmodel/dianhua.png' class='change' bindtap='changetel'></image>
+    </view>
+    <view wx:if="{{!bindhasPhone}}">
+      <button class="nonePhone" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">请绑定手机号</button>
+    </view>
+  </view>
+</view>
+<!-- <view class='line'></view> -->
+<view class='itemClasses'>
+  <view class="itemclass" bindtap='toMypublish'>
+    <image class="icon_img" src='/image/tabBar/fabu@2x.png'></image>
+    <text>我的发布 {{collect}}</text>
+    <image src='/image/myself/you.png' class='todetail'></image>
+  </view>
+  <view class="itemclass" bindtap='toMycollection'>
+    <image class="icon_img" src='/image/smallmodel/shoucang.png'></image>
+    <text>我的收藏 {{release}}</text>
+    <image src='/image/myself/you.png' class='todetail'></image>
+  </view>
+  <!-- <view class="itemclass" bindtap='tofollow'>
+    <image class="icon_img" src='/image/myself/fensi.png'></image>
+    <text>关注的人 {{myFollow}}</text>
+    <image src='/image/myself/you.png' class='todetail'></image>
+  </view> -->
+  <view class="itemclass" bindtap='tofans'>
+    <image class="icon_img" src='/image/myself/guanzhu.png'></image>
+    <text>我的邻粉</text>
+    <image src='/image/myself/you.png' class='todetail'></image>
+  </view>
+  <view class="itemclass" bindtap='toRedPaper'>
+    <image class="icon_img" src='/image/smallmodel/hasredpaper.png'></image>
+    <text>我的红包</text>
+    <image src='/image/myself/you.png' class='todetail'></image>
+  </view>
+  <!-- <view class="itemclass" bindtap='toshop'>
+    <image class="icon_img" src='/image/shop.png'></image>
+    <text>底商管理</text>
+    <image src='/image/myself/you.png' class='todetail'></image>
+  </view> -->
+  <navigator url='/pages/myself/feedback/feedback'>
+    <view class="itemclass bottom" style='margin-bottom:50rpx;'>
+      <image class="icon_img" src='/image/myself/yjfk@2x.png'></image>
+      <text>我的建议</text>
+      <image src='/image/myself/you.png' class='todetail'></image>
+    </view>
+  </navigator>
+</view>
+<acd tid="adunit-c623be8d379b78b2"></acd>
+ <!-- 弹窗 -->
+<!-- <view class='pop' wx:if="{{hideName}}">
+  <text class='pop_txt' wx:if="{{bangding}}">请绑定手机号</text>
+  <text class='pop_txt' wx:if="{{genggai}}">更改联系方式</text>
+  <image src='/image/cuowuTwo@2x.png' class='cuowu' bindtap='hide'></image>
+  <view class='phone'>
+    <image src='/image/zh_icon_phone@2x.png'></image>
+    <input placeholder='请输入您的手机号' class='phe_inp' type= "number" bindinput='inputPhoneNum' maxlength="11" />
+  </view>
+  <view class='valid'>
+      <image class="val_phe" src='/image/sr_icon_phone@2x.png'></image>
+      <input placeholder='请输入您的手机号验证码' type='number' bindinput='onverify' class='phe_inp2'></input>
+      <image class='val_val' src='/image/sr_btn_hqyz@2x.png' bindtap='getVerificationCode' wx:if="{{verification}}"></image>
+      <button class='count' wx:if="{{ontime}}">{{time}}s</button>
+
+  </view>
+  <text class='pop_queren' bindtap='onconfirm'>确认</text>
+</view> -->

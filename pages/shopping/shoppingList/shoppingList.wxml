@@ -1,0 +1,21 @@
+<view class='header'>
+    <view class='shopImage' bindtap='toshopdetail'>
+        <image src='{{shopDetail.logoimgs}}'></image>
+    </view>
+    <view class='right'>
+        <view>{{shopDetail.name}}<button class='certif'>已认证</button></view>
+        <view class="locat" id="{{idx}}">{{plateName}}</view>
+        <view class='position'>具体地址：{{shopDetail.location}}</view>
+    </view>
+</view>
+<!-- 列表详情 -->
+<view class='Listdetail'>
+    <view class='detailImage'>
+        <image></image>
+    </view>
+    <view class='list_text'>
+      <view class='title'>今晚全场八折,请不要错过</view>
+      <view class='time'>2018/09/12 14:00</view>
+      <view class='dellist'>删除</view>
+    </view>
+</view>

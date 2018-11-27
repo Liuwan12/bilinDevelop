@@ -1,0 +1,25 @@
+<acd tid="adunit-5c035e3806a155cd"></acd>
+ <view class="menu_box">
+    <view class='menu_content'>
+      <text catchtap="selectTap" data-current="1" class='menu1 {{menuTapCurrent==null|menuTapCurrent=="1"?"active":""}}'>关注的人</text>
+    </view>
+    <view class='menu_content' catchtap="selectTap" data-current="0">
+      <text class='menu1 {{menuTapCurrent=="0"?"active":""}}' >TA的邻粉</text>
+    </view>
+ </view>
+<view class="myFollowModel_info" wx:for="{{hisFollowArr}}" wx:key="key" wx:for-index="idx" id="{{idx}}">
+  <view style='width:260px;display:inline-block;' bindtap='tohisDetail' id="{{idx}}">
+    <view class='avater'>
+      <image src='{{item.avatar}}'></image>
+    </view>
+    <text class='name'>{{item.nickname}}</text>
+    <view class='usersex'>
+        <image src='{{item.sex}}'></image>
+    </view>
+  </view>
+  <text class='txt' wx:if="{{item.nofocus}}" bindtap='focus' id="{{idx}}">+关注</text>
+  <text class='txt1'wx:if="{{item.hasfocus}}" bindtap='focus' id="{{idx}}">已关注</text>
+  <!-- <text class='txt1'wx:if="{{item.hasfocus}}" bindtap='focus' id="{{idx}}">互相关注</text> -->
+</view>
+<!-- <view class="nofocusUser" wx:if="{{nofocusUser}}">TA还没有关注的人哦❤️</view>
+<view class="noUserFocus" wx:if="{{noUserFocus}}">还没有邻粉关注TA哦❤️</view> -->

@@ -1,0 +1,11 @@
+{
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "淘比邻:详情",
+  "usingComponents": {
+    "infoBargin": "/pages/components/bargain/bargain",
+    "comments": "/pages/components/comment/comment",
+    "acd":"/pages/components/ad/ad",
+    "infoTeam": "/pages/components/jointeam/jointeam",
+    "similarList": "/pages/components/similarList/similarList"
+  }
+}

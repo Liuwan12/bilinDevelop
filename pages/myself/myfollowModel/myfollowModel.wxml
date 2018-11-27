@@ -1,0 +1,5 @@
+<view class="myFollowModel_info" wx:for="{{myFollowArr}}" wx:key="key" wx:for-index="idx" id="{{idx}}">
+  <text>{{myFollowArr[idx].plate.title}}</text>
+  <view class="giveup_follow" catchtap='cancleFollow' id="{{idx}}">已关注</view>
+</view>
+<view class='nofocusplate' wx:if="{{nofocusplate}}">你还没有关注位置，赶快去关注一两个位置发个信息吧❤️</view>
